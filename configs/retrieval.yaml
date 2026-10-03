@@ -1,0 +1,7 @@
+dense_top_k: 20
+sparse_top_k: 20
+fused_top_k: 30
+rerank_top_k: 8
+rrf_k: 60
+mmr_lambda: 0.7
+abstain_min_rerank_score: 0.15

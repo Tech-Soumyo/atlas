@@ -1,0 +1,6 @@
+enable_query_rewrite: true
+enable_multi_query: false
+enable_mmr: false
+enable_xgb_rerank: false
+enable_agentic: false
+enable_semantic_chunking: false

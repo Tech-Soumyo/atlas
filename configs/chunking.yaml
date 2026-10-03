@@ -1,0 +1,7 @@
+strategy: recursive
+chunk_size_tokens: 512
+chunk_overlap_tokens: 64
+parent_child:
+  enabled: true
+  child_size_tokens: 256
+  parent_size_tokens: 1024

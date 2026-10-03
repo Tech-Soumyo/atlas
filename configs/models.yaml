@@ -1,0 +1,5 @@
+embedding_model: sentence-transformers/all-MiniLM-L6-v2
+embedding_dims: 384
+cross_encoder_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+chat_model: gpt-4o-mini
+embedding_model_version: "st-all-minilm-l6-v2@1"
