@@ -10,7 +10,7 @@ from atlas_common.logging import get_logger
 from atlas_persistence.object_store.local import document_storage_path
 from atlas_persistence.postgres.models import Chunk
 from atlas_persistence.postgres.repositories.chunks import ChunkRepository
-from atlas_persistence.qdrant.client import (
+from atlas_persistence.vector.store import (
     delete_points_by_document_id,
     ensure_chunks_collection,
     upsert_chunk_points,
@@ -40,7 +40,7 @@ async def cleanup_document_artifacts(
     *,
     settings: Settings | None = None,
 ) -> None:
-    """Delete Postgres chunks and Qdrant points for a document."""
+    """Delete Postgres chunks and vector points for a document."""
     chunks = ChunkRepository(session)
     await chunks.delete_by_document_id(document_id)
     delete_points_by_document_id(document_id, settings=settings)

@@ -6,7 +6,6 @@ requires-python = ">=3.12"
 dependencies = [
   "atlas-common",
   "atlas-persistence",
-  "qdrant-client>=1.13.0",
   "sentence-transformers>=3.3.0",
   "numpy>=2.0.0",
 ]

@@ -1,12 +1,11 @@
-"""Dense ANN search against Qdrant."""
+"""Dense ANN search via the persistence vector store façade."""
 
 from __future__ import annotations
 
 from uuid import UUID
 
 from atlas_common.config import Settings, get_settings
-from atlas_persistence.qdrant.client import get_qdrant_client
-from qdrant_client.http import models as qm
+from atlas_persistence.vector.store import search_by_document_ids as store_search
 
 from atlas_retrieval.models import RetrievedHit
 
@@ -21,30 +20,18 @@ def search_by_document_ids(
     if not document_ids:
         return []
     cfg = settings or get_settings()
-    client = get_qdrant_client(cfg)
-    response = client.query_points(
-        collection_name=cfg.qdrant_collection,
-        query=query_vector,
-        limit=top_k,
-        with_payload=True,
-        query_filter=qm.Filter(
-            must=[
-                qm.FieldCondition(
-                    key="document_id",
-                    match=qm.MatchAny(any=[str(doc_id) for doc_id in document_ids]),
-                )
-            ]
-        ),
+    rows = store_search(
+        query_vector,
+        document_ids,
+        top_k=top_k,
+        settings=cfg,
     )
-    hits: list[RetrievedHit] = []
-    for point in response.points:
-        payload = point.payload or {}
-        hits.append(
-            RetrievedHit(
-                chunk_id=UUID(str(payload.get("chunk_id", point.id))),
-                document_id=UUID(str(payload["document_id"])),
-                score=float(point.score or 0.0),
-                ordinal=int(payload.get("ordinal", 0)),
-            )
+    return [
+        RetrievedHit(
+            chunk_id=UUID(str(row["chunk_id"])),
+            document_id=UUID(str(row["document_id"])),
+            score=float(row["score"]),
+            ordinal=int(row["ordinal"]),
         )
-    return hits
+        for row in rows
+    ]

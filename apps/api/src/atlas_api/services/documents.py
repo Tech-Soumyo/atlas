@@ -12,8 +12,8 @@ from atlas_persistence.postgres.models import Document, Job
 from atlas_persistence.postgres.repositories.chunks import ChunkRepository
 from atlas_persistence.postgres.repositories.documents import DocumentRepository
 from atlas_persistence.postgres.repositories.jobs import JobRepository
-from atlas_persistence.qdrant.client import delete_points_by_document_id
 from atlas_persistence.redis.queue import enqueue_ingest_document
+from atlas_persistence.vector.store import delete_points_by_document_id
 from sqlalchemy.ext.asyncio import AsyncSession
 
 
@@ -61,7 +61,7 @@ async def upload_document(
             }
         if existing.status == "failed":
             await ChunkRepository(session).delete_by_document_id(existing.id)
-            # Sync Qdrant client — must not block the event loop.
+            # Sync vector client — must not block the event loop.
             await asyncio.to_thread(delete_points_by_document_id, existing.id, settings=settings)
             await docs.reset_for_requeue(existing)
             job = await jobs.add(

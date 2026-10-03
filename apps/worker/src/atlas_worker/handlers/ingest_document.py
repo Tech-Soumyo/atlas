@@ -1,4 +1,4 @@
-"""arq handler: ingest one document by id."""
+"""Ingest one document by id (arq job or QStash HTTP worker)."""
 
 from __future__ import annotations
 

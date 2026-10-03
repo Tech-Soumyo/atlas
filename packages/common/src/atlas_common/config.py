@@ -44,7 +44,8 @@ class Settings(BaseSettings):
     )
 
     atlas_env: str = "development"
-    atlas_data_plane: DataPlane = "local"
+    # Cloud-native Neon + Upstash is the default runtime path.
+    atlas_data_plane: DataPlane = "upstash"
     atlas_log_level: str = "INFO"
     atlas_api_host: str = "0.0.0.0"
     atlas_api_port: int = 8000
@@ -63,6 +64,8 @@ class Settings(BaseSettings):
     atlas_rate_limit_ask_per_min: int = 20
 
     database_url: str = "postgresql+psycopg://atlas:atlas@localhost:5432/atlas"
+    # Neon pooled URL (PgBouncer) — prefer for SQLAlchemy runtime when set.
+    database_url_pooled: str | None = None
     postgres_user: str = "atlas"
     postgres_password: str = "atlas"
     postgres_db: str = "atlas"
@@ -76,6 +79,25 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     redis_queue_name: str = "atlas:ingest"
     redis_cache_ttl_seconds: int = 3600
+
+    # Upstash Redis (REST) — required when atlas_data_plane=upstash
+    upstash_redis_rest_url: str | None = None
+    upstash_redis_rest_token: str | None = None
+    upstash_redis_rest_read_only_token: str | None = None
+
+    # Upstash Vector — required when atlas_data_plane=upstash
+    upstash_vector_rest_url: str | None = None
+    upstash_vector_rest_token: str | None = None
+    upstash_vector_rest_read_only_token: str | None = None
+
+    # QStash — required when atlas_data_plane=upstash
+    qstash_url: str | None = None
+    qstash_token: str | None = None
+    qstash_read_only_token: str | None = None
+    qstash_current_signing_key: str | None = None
+    qstash_next_signing_key: str | None = None
+    # Public HTTPS base URL QStash can reach (tunnel in local cloud-mode dev).
+    atlas_worker_public_url: str | None = None
 
     object_store_backend: ObjectStoreBackend = "local"
     object_store_path: str = "./data/raw"
@@ -121,9 +143,63 @@ class Settings(BaseSettings):
         return self.atlas_env.lower() in {"test", "testing"}
 
     @property
+    def is_upstash_plane(self) -> bool:
+        return self.atlas_data_plane == "upstash"
+
+    @property
+    def sqlalchemy_database_url(self) -> str:
+        """URL for SQLAlchemy runtime (prefer Neon pooled when configured)."""
+        if self.database_url_pooled:
+            return self.database_url_pooled
+        return self.database_url
+
+    @property
+    def alembic_database_url(self) -> str:
+        """URL for Alembic migrations (prefer direct Neon URL, not pooler)."""
+        return self.database_url
+
+    @property
     def psycopg_dsn(self) -> str:
         """DSN suitable for the psycopg3 driver (no SQLAlchemy dialect suffix)."""
-        return self.database_url.replace("postgresql+psycopg://", "postgresql://", 1)
+        return self.sqlalchemy_database_url.replace(
+            "postgresql+psycopg://", "postgresql://", 1
+        )
+
+    def validate_data_plane(self) -> None:
+        """Fail fast when cloud mode is selected but required env vars are missing.
+
+        Skipped when ``atlas_env`` is test/testing so unit tests can mock adapters.
+        """
+        if self.is_test or not self.is_upstash_plane:
+            return
+        missing: list[str] = []
+        required: dict[str, str | None] = {
+            "DATABASE_URL": self.database_url if self.database_url else None,
+            "UPSTASH_REDIS_REST_URL": self.upstash_redis_rest_url,
+            "UPSTASH_REDIS_REST_TOKEN": self.upstash_redis_rest_token,
+            "UPSTASH_VECTOR_REST_URL": self.upstash_vector_rest_url,
+            "UPSTASH_VECTOR_REST_TOKEN": self.upstash_vector_rest_token,
+            "QSTASH_TOKEN": self.qstash_token,
+            "QSTASH_CURRENT_SIGNING_KEY": self.qstash_current_signing_key,
+            "QSTASH_NEXT_SIGNING_KEY": self.qstash_next_signing_key,
+            "ATLAS_WORKER_PUBLIC_URL": self.atlas_worker_public_url,
+        }
+        for name, value in required.items():
+            if name == "DATABASE_URL":
+                # Default localhost URL is not a valid cloud Neon DSN.
+                if not value or "localhost" in value or "127.0.0.1" in value:
+                    missing.append(name)
+                continue
+            if value is None or (isinstance(value, str) and not value.strip()):
+                missing.append(name)
+        if missing:
+            joined = ", ".join(missing)
+            msg = (
+                "ATLAS_DATA_PLANE=upstash requires cloud credentials; "
+                f"missing or invalid: {joined}. "
+                "See docs/upstash_integration.md and .env.example."
+            )
+            raise RuntimeError(msg)
 
 
 def load_yaml_file(path: Path) -> JsonDict:
@@ -154,6 +230,17 @@ def load_yaml_configs(configs_dir: Path | None = None) -> dict[str, JsonDict]:
 def get_settings() -> Settings:
     """Return cached process settings."""
     return Settings()
+
+
+def ensure_data_plane(settings: Settings | None = None) -> Settings:
+    """Return settings after ``validate_data_plane()`` (call from app lifespan).
+
+    Fixer E / API lifespan should invoke this at startup. Skipped automatically
+    when ``atlas_env`` is test/testing or ``atlas_data_plane`` is ``local``.
+    """
+    cfg = settings or get_settings()
+    cfg.validate_data_plane()
+    return cfg
 
 
 def clear_settings_cache() -> None:

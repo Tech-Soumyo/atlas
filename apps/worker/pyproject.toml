@@ -11,6 +11,9 @@ dependencies = [
   "atlas-retrieval",
   "redis>=5.2.0",
   "arq>=0.26.0",
+  "qstash>=3.4.0",
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.34.0",
   "sqlalchemy[asyncio]>=2.0.36",
   "pymupdf>=1.25.0",
   "sentence-transformers>=3.3.0",
@@ -18,6 +21,7 @@ dependencies = [
 
 [project.scripts]
 atlas-worker = "atlas_worker.main:main"
+atlas-worker-http = "atlas_worker.http_app:app"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]

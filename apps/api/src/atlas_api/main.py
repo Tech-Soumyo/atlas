@@ -5,13 +5,13 @@ from __future__ import annotations
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
-from atlas_common.config import get_settings, load_yaml_configs
+from atlas_common.config import ensure_data_plane, get_settings, load_yaml_configs
 from atlas_common.logging import configure_logging, get_logger
 from atlas_common.telemetry import setup_telemetry
 from atlas_persistence.postgres.engine import dispose_engine, init_engine
-from atlas_persistence.qdrant.client import ensure_chunks_collection
-from atlas_persistence.redis.queue import close_arq_pool
+from atlas_persistence.redis.queue import close_arq_pool, close_qstash_client
 from atlas_persistence.redis.rate_limit import close_rate_limit_redis
+from atlas_persistence.vector.store import ensure_chunks_collection
 from atlas_security.api_key import require_api_key_configured
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -25,7 +25,8 @@ logger = get_logger(__name__)
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
-    settings = get_settings()
+    # Fail fast when ATLAS_DATA_PLANE=upstash and cloud credentials are missing.
+    settings = ensure_data_plane(get_settings())
     require_api_key_configured(settings)
     configure_logging(settings.atlas_log_level, service_name=settings.otel_service_name)
     setup_telemetry(
@@ -34,10 +35,11 @@ async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
     )
     init_engine(settings)
     if not settings.is_test:
+        # Vector façade: Upstash Vector ensure (cloud) or Qdrant collection (local).
         try:
             ensure_chunks_collection(settings)
         except Exception as exc:
-            logger.warning("qdrant collection ensure skipped: %s", exc)
+            logger.warning("vector collection ensure skipped: %s", exc)
     yaml_configs = load_yaml_configs(settings.configs_dir)
     logger.info(
         "atlas-api starting env=%s data_plane=%s yaml_files=%s version=%s",
@@ -47,14 +49,24 @@ async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
         __version__,
     )
     yield
-    await close_arq_pool()
-    await close_rate_limit_redis()
+    if settings.is_upstash_plane:
+        # No arq pool in cloud mode; drop QStash client cache + Upstash Redis RL.
+        await close_qstash_client()
+        await close_rate_limit_redis()
+    else:
+        await close_arq_pool()
+        await close_rate_limit_redis()
     await dispose_engine()
     logger.info("atlas-api shutting down")
 
 
 def create_app() -> FastAPI:
-    """Application factory used by uvicorn and tests."""
+    """Application factory used by uvicorn and tests.
+
+    QStash ingest delivery targets (``/internal/jobs/*``) live on the worker HTTP
+    app (``atlas_worker.http_app``), not here — avoids apps importing each other.
+    Point ``ATLAS_WORKER_PUBLIC_URL`` at a tunnel to that worker process.
+    """
     application = FastAPI(
         title="Atlas API",
         version=__version__,

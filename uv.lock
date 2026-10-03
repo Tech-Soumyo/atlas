@@ -310,8 +310,11 @@ dependencies = [
     { name = "atlas-common" },
     { name = "psycopg", extra = ["binary", "pool"] },
     { name = "qdrant-client" },
+    { name = "qstash" },
     { name = "redis" },
     { name = "sqlalchemy", extra = ["asyncio"] },
+    { name = "upstash-redis" },
+    { name = "upstash-vector" },
 ]
 
 [package.metadata]
@@ -321,8 +324,11 @@ requires-dist = [
     { name = "atlas-common", editable = "packages/common" },
     { name = "psycopg", extras = ["binary", "pool"], specifier = ">=3.2.0" },
     { name = "qdrant-client", specifier = ">=1.13.0" },
+    { name = "qstash", specifier = ">=3.4.0" },
     { name = "redis", specifier = ">=5.2.0" },
     { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.36" },
+    { name = "upstash-redis", specifier = ">=1.8.0" },
+    { name = "upstash-vector", specifier = ">=0.8.0" },
 ]
 
 [[package]]
@@ -333,7 +339,6 @@ dependencies = [
     { name = "atlas-common" },
     { name = "atlas-persistence" },
     { name = "numpy" },
-    { name = "qdrant-client" },
     { name = "sentence-transformers" },
 ]
 
@@ -342,7 +347,6 @@ requires-dist = [
     { name = "atlas-common", editable = "packages/common" },
     { name = "atlas-persistence", editable = "packages/persistence" },
     { name = "numpy", specifier = ">=2.0.0" },
-    { name = "qdrant-client", specifier = ">=1.13.0" },
     { name = "sentence-transformers", specifier = ">=3.3.0" },
 ]
 
@@ -368,10 +372,13 @@ dependencies = [
     { name = "atlas-persistence" },
     { name = "atlas-retrieval" },
     { name = "atlas-security" },
+    { name = "fastapi" },
     { name = "pymupdf" },
+    { name = "qstash" },
     { name = "redis" },
     { name = "sentence-transformers" },
     { name = "sqlalchemy", extra = ["asyncio"] },
+    { name = "uvicorn", extra = ["standard"] },
 ]
 
 [package.metadata]
@@ -382,10 +389,13 @@ requires-dist = [
     { name = "atlas-persistence", editable = "packages/persistence" },
     { name = "atlas-retrieval", editable = "packages/retrieval" },
     { name = "atlas-security", editable = "packages/security" },
+    { name = "fastapi", specifier = ">=0.115.0" },
     { name = "pymupdf", specifier = ">=1.25.0" },
+    { name = "qstash", specifier = ">=3.4.0" },
     { name = "redis", specifier = ">=5.2.0" },
     { name = "sentence-transformers", specifier = ">=3.3.0" },
     { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.36" },
+    { name = "uvicorn", extras = ["standard"], specifier = ">=0.34.0" },
 ]
 
 [[package]]
@@ -2499,6 +2509,19 @@ wheels = [
 ]
 
 [[package]]
+name = "qstash"
+version = "3.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "pyjwt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/83/0d/42c12ee57d48f8b1399e026d750c39497ba5c3a4e87ad1b8c4898e91d335/qstash-3.4.0.tar.gz", hash = "sha256:883744276820788986bd5c4386c2f244c89f10ad3720210efa65e776b11a6dea", size = 29198, upload-time = "2026-03-18T14:13:00.735Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5b/63/98dcf66ed3a9d55eba3d4dadb4876be167409fb3f74c6a9443f0b55558c8/qstash-3.4.0-py3-none-any.whl", hash = "sha256:a023737aa824b274057a34bb822c5ba3c45b1001831ff97421fbfefcfe5ff860", size = 40680, upload-time = "2026-03-18T14:12:59.885Z" },
+]
+
+[[package]]
 name = "redis"
 version = "5.3.1"
 source = { registry = "https://pypi.org/simple" }
@@ -3171,6 +3194,30 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz", hash = "sha256:8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7", size = 200404, upload-time = "2026-10-03T09:23:14.143Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/94/21/1e5995a1c920cce14e4bffae20c665ec10e7ed03ab25e006cd741092b718/tzdata-2026.5-py2.py3-none-any.whl", hash = "sha256:b683bd1b6659ddcd810ff02ad09ba821d4bf1065072805063eb35c49617905ac", size = 347996, upload-time = "2026-10-03T09:23:12.535Z" },
+]
+
+[[package]]
+name = "upstash-redis"
+version = "1.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6d/63/98fffe42262376f4b39d371d9b583b33b13c08f662bda05c627827d2c290/upstash_redis-1.8.0.tar.gz", hash = "sha256:5fcd172802f517473b711de2fd1d2d2587c13c816cd2c570ad66fceb4f77e695", size = 47555, upload-time = "2026-08-26T09:50:41.96Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/05/04/a350e6b9b910c6006826dd63deb45be30fed85b826351588df27671bd92b/upstash_redis-1.8.0-py3-none-any.whl", hash = "sha256:e08f18d9a955b2b224ab8d1611a9782bc21054a83afb3b88df36809ff87096fa", size = 49959, upload-time = "2026-08-26T09:50:40.809Z" },
+]
+
+[[package]]
+name = "upstash-vector"
+version = "0.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/65/22/1b9161b82ef52addc2b71ffca9498cb745b34b2e43e77ef1c921d96fb3f1/upstash_vector-0.8.0.tar.gz", hash = "sha256:cdeeeeabe08c813f0f525d9b6ceefbf17abb720bd30190cd6df88b9f2c318334", size = 18565, upload-time = "2025-02-27T11:52:38.14Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ab/ce/1528e6e37d4a1ba7a333ebca7191b638986f4ba9f73ba17458b45c4d36e2/upstash_vector-0.8.0-py3-none-any.whl", hash = "sha256:e8a7560e6e80e22ff2a4d95ff0b08723b22bafaae7dab38eddce51feb30c5785", size = 18480, upload-time = "2025-02-27T11:52:36.189Z" },
 ]
 
 [[package]]

@@ -1,3 +1,10 @@
+# Atlas Compose stack — offline / local data plane.
+#
+# Host default (via `.env`): ATLAS_DATA_PLANE=upstash (Neon + Upstash Redis/Vector/QStash).
+# This file deliberately forces ATLAS_DATA_PLANE=local and Compose DNS URLs for
+# postgres/redis/qdrant on the api + worker services so a cloud-oriented host
+# `.env` does not break containerized offline runs. Do not remove those overrides
+# to "match" `.env`; run the cloud plane on the host with uv + a tunnel instead.
 name: atlas
 
 services:
@@ -51,6 +58,7 @@ services:
     env_file:
       - .env
     environment:
+      # Force local plane + service DNS (overrides cloud values from .env).
       ATLAS_ENV: development
       ATLAS_DATA_PLANE: local
       ATLAS_CONFIGS_DIR: /app/configs
@@ -83,6 +91,7 @@ services:
     env_file:
       - .env
     environment:
+      # Force local plane + service DNS (overrides cloud values from .env).
       ATLAS_ENV: development
       ATLAS_DATA_PLANE: local
       ATLAS_CONFIGS_DIR: /app/configs

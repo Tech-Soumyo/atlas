@@ -11,6 +11,9 @@ dependencies = [
   "qdrant-client>=1.13.0",
   "redis>=5.2.0",
   "arq>=0.26.0",
+  "upstash-redis>=1.8.0",
+  "qstash>=3.4.0",
+  "upstash-vector>=0.8.0",
 ]
 
 [build-system]

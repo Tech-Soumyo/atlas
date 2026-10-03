@@ -20,7 +20,8 @@ target_metadata = Base.metadata
 
 
 def get_url() -> str:
-    return get_settings().database_url
+    """Direct Neon / Postgres URL for Alembic (not the PgBouncer pooler)."""
+    return get_settings().alembic_database_url
 
 
 def run_migrations_offline() -> None:

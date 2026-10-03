@@ -18,12 +18,17 @@ _session_factory: async_sessionmaker[AsyncSession] | None = None
 
 
 def init_engine(settings: Settings | None = None) -> AsyncEngine:
-    """Create (or return) the process wide async engine."""
+    """Create (or return) the process wide async engine.
+
+    Uses ``Settings.sqlalchemy_database_url`` (Neon pooled / PgBouncer when
+    ``DATABASE_URL_POOLED`` is set; otherwise ``DATABASE_URL``). SSL for Neon
+    is expected via ``sslmode=require`` on the URL query string.
+    """
     global _engine, _session_factory
     if _engine is not None:
         return _engine
     cfg = settings or get_settings()
-    _engine = create_async_engine(cfg.database_url, pool_pre_ping=True)
+    _engine = create_async_engine(cfg.sqlalchemy_database_url, pool_pre_ping=True)
     _session_factory = async_sessionmaker(_engine, expire_on_commit=False)
     return _engine
 

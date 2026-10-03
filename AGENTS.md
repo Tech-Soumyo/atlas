@@ -17,7 +17,7 @@ Skateboard (ship the smallest usable product, then grow it).
 ```bash
 make install          # uv sync workspace + dev tools
 make install-web      # npm install in apps/web
-make up               # docker compose up --build (api, worker, web, postgres, qdrant, redis)
+make up               # docker compose up --build (forces ATLAS_DATA_PLANE=local)
 make down
 make test-unit        # pytest tests/unit (health + config smoke)
 make test
@@ -27,10 +27,15 @@ make format            # Ruff format + Prettier
 make pre-commit-install
 make ci               # lint + types + tests + web lint/tsc
 
-# Local API without Compose (host deps must be up for /ready)
-# When .env is cloud oriented, override ATLAS_DATA_PLANE=local plus DATABASE_URL/REDIS_URL/QDRANT_URL
+# Host API — cloud plane (default .env: Neon + Upstash)
+# Tunnel worker HTTP first; set ATLAS_WORKER_PUBLIC_URL to the public HTTPS base
 uv run uvicorn atlas_api.main:app --host 0.0.0.0 --port 8000
-uv run atlas-worker
+uv run uvicorn atlas_worker.http_app:app --host 0.0.0.0 --port 8001
+
+# Host API — local plane (override when .env is cloud oriented)
+ATLAS_DATA_PLANE=local DATABASE_URL=… REDIS_URL=… QDRANT_URL=… \
+  uv run uvicorn atlas_api.main:app --host 0.0.0.0 --port 8000
+uv run atlas-worker   # arq consumer (local Redis only)
 cd apps/web && npm run dev
 cd apps/web && npm run test:e2e
 ```
@@ -68,8 +73,10 @@ For `/develop tooling`: Ruff + mypy strict; ESLint + Prettier (ESLint already in
 - Strict types (mypy/TS `strict`, no `any`). Match scaffold folders. Document public APIs; consistent errors; validate env at startup.
 - Naming: `atlas_*` under `src/`; snake_case Python; camelCase TS. Conventional commits.
 - Config: read env and YAML only through `atlas_common.config` (`Settings`, `load_yaml_configs`); do not scatter `os.environ` in domain packages.
-- API health: `/health` is liveness; `/ready` probes postgres, redis, and qdrant (skipped when `ATLAS_ENV=test`).
-- Compose: force `ATLAS_DATA_PLANE=local` and service DNS URLs in `docker-compose.yml` so a host cloud `.env` does not break the local data plane.
+- API health: `/health` is liveness; `/ready` probes match `ATLAS_DATA_PLANE` (local: postgres/redis/qdrant; upstash: postgres/upstash_redis/upstash_vector/qstash). Network probes skipped when `ATLAS_ENV=test`.
+- API lifespan: `ensure_data_plane()` / `validate_data_plane()` fail-fast in upstash; no arq pool; vector façade ensure; close Upstash Redis RL (+ QStash client cache) on shutdown.
+- QStash ingest handlers: `atlas_worker.http_app` + `/internal/jobs/*` (not mounted on the API). Tunnel `ATLAS_WORKER_PUBLIC_URL` to that process.
+- Compose: force `ATLAS_DATA_PLANE=local` and service DNS URLs in `docker-compose.yml` so a host cloud `.env` does not break the local data plane. Host default remains upstash via `.env`.
 - Web → API: browser uses `NEXT_PUBLIC_ATLAS_API_URL`; server side (Compose) prefers `ATLAS_API_INTERNAL_URL` via `apps/web/lib/atlas_api.ts`.
 - Atlas docs win over skill layouts; Context7 wins over stale snippets. Skill pick order: [`docs/skills_usage_guide.md`](docs/skills_usage_guide.md).
 

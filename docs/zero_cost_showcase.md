@@ -156,7 +156,76 @@ NEXT_PUBLIC_ATLAS_API_URL=http://localhost:8000
 
 ---
 
-## 8. Optional: Upstash instead of local Redis/Qdrant
+## 8. Runtime cost levers (CPU · memory · DB · tokens)
+
+Atlas M1 keeps the **full PDF** on disk and extracts **all** text for chunking. Cost control is not “extract only required fields”; it is **ingest once, retrieve less, generate short**. Tunables live in `configs/chunking.yaml` and `configs/retrieval.yaml`.
+
+### CPU
+
+| Lever | Why |
+|-------|-----|
+| Heavy work on `apps/worker` only | Keeps API event loop free |
+| Batch embeddings; skip re-ingest on ready sha256 | Avoids repeat MiniLM + parse |
+| Cap arq concurrency | Stops laptop thrash under multi-upload |
+| Skip OCR unless scanned | OCR is far costlier than text PDF parse |
+| Rerun rerank only when dense scores are weak | Later hybrid path; don’t always-on burn CPU |
+
+### Memory
+
+| Lever | Why |
+|-------|-----|
+| One Embedder instance per worker process | Model load dominates RAM |
+| Bound embed batch size / chunk lists | Caps MiniLM + string spikes |
+| PDF bytes on object store, not Postgres | Keeps OLTP lean |
+| Lean Qdrant payload (ids + vector); text in Postgres | Avoid duplicating chunk bodies |
+| Page-wise parse when docs grow | Don’t hold giant full-doc strings forever |
+
+### DB (Postgres · Qdrant · Redis)
+
+| Lever | Why |
+|-------|-----|
+| sha256 idempotent upload | No duplicate docs/chunks/points |
+| Cleanup chunks + Qdrant on fail/delete | Index size stays honest |
+| Index only queried columns | Less write amplification |
+| Vectors in Qdrant only (not Postgres) | One source of truth |
+| TTL / purge old jobs and ask logs if not product-critical | Bounds history growth |
+| Ask + query-embed cache (M7; `enable_response_cache`) | Cuts repeat work |
+
+### Tokens (usually the real $ / free-tier burn)
+
+Highest ROI first:
+
+1. **Abstain early** on weak retrieval — skip or shorten the LLM call.  
+2. **Tune `top_k`, chunk size, overlap** — M1 defaults (`top_k: 8`, `chunk_size: 1000`, `overlap: 200`) are generous; smaller context = fewer tokens.  
+3. **Context budgeter (M5 / tiktoken)** — hard cap prompt tokens; drop lowest-score chunks first.  
+4. **Cache identical asks** keyed by normalized question + sorted `document_ids`.  
+5. **Cache query embeddings** for repeated questions.  
+6. **Small/cheap model by default**; escalate only when needed (Phase 2 gateway).  
+7. Tight cite/abstain prompts — no metadata noise in the pack.  
+8. Dedupe near-duplicate chunks before packing (MMR / hash).
+
+### Biggest Atlas-specific wins
+
+| Lever | Status |
+|-------|--------|
+| Don’t re-ingest same sha256 | Done in M1 upload path |
+| Local MiniLM embeddings | Done — protects LLM quota |
+| Abstain on low similarity | Done in M1 ask path |
+| Tighten chunk/top_k + log token usage | Easy config/ops win now |
+| Response + embed cache + invalidation | Planned M7 |
+| Context budgeter | Planned M5 |
+
+### What not to chase early
+
+- Schema-only “extract required fields” as storage — different product; rarely beats retrieve + budget for Q&A cost.  
+- Huge free-tier contexts with tiny models — you pay in retries and bad answers.  
+- Always-on OCR/layout parsers before evals prove the miss rate.
+
+Interview talking points: see [`interview_cards.md`](interview_cards.md) (cost / quota card).
+
+---
+
+## 9. Optional: Upstash instead of local Redis/Qdrant
 
 If you want less Docker and a serverless interview story, use **Upstash free-tier** products:
 
@@ -170,7 +239,7 @@ Keep **Postgres** local for documents/ACL. Full design: [`upstash_integration.md
 
 ---
 
-## 9. Hardware reality check
+## 10. Hardware reality check
 
 With Groq/Gemini for chat, laptop mainly runs Compose + embeddings/rerank:
 
@@ -184,7 +253,7 @@ You no longer need large local LLM VRAM unless using Ollama fallback.
 
 ---
 
-## 10. Showcase corpus (keep it small)
+## 11. Showcase corpus (keep it small)
 
 - **3 fake tenants** (HR / Eng / Finance)  
 - **~50–200 documents**  
@@ -194,7 +263,7 @@ Small corpus = fewer LLM calls during demos and evals → stay inside free quota
 
 ---
 
-## 11. What “done for showcase” means (₹0 bar)
+## 12. What “done for showcase” means (₹0 bar)
 
 - [ ] Compose stack up (api, worker, web, postgres, qdrant, redis)  
 - [ ] Groq (or Gemini) key in `.env`; `/ask` returns cited or abstained answer  
@@ -203,10 +272,11 @@ Small corpus = fewer LLM calls during demos and evals → stay inside free quota
 - [ ] Hybrid (+ rerank) beats dense-only on a small golden set  
 - [ ] Cross-tenant test passes  
 - [ ] Interview talk includes free-tier limits + caching/fallback story  
+- [ ] Can name CPU/memory/DB/token levers from §8 (sha256 skip, local embed, abstain, top_k/budget, ask cache)  
 
 ---
 
-## 12. Free-tier operating rules (don’t get burned mid-demo)
+## 13. Free-tier operating rules (don’t get burned mid-demo)
 
 1. **Cache** retrieval results and repeated demo Q&A when safe.  
 2. **Script the demo** — 5–10 known questions, not open-ended load tests.  
@@ -217,11 +287,11 @@ Small corpus = fewer LLM calls during demos and evals → stay inside free quota
 
 ---
 
-## 13. How to talk about it in interviews
+## 14. How to talk about it in interviews
 
 **Good:**
 
-> “Infra is local Compose — Postgres BM25, Qdrant, Sentence Transformers. Generation uses an OpenAI-compatible adapter pointed at Groq’s free tier, with Gemini as backup and Ollama offline. I design for rate limits, caching, and provider swap without rewriting the RAG core.”
+> “Infra is local Compose — Postgres BM25, Qdrant, Sentence Transformers. Generation uses an OpenAI-compatible adapter pointed at Groq’s free tier, with Gemini as backup and Ollama offline. I design for rate limits, caching, and provider swap without rewriting the RAG core. Cost control is ingest-once, retrieve-less, generate-short: local embeds, sha256 skip, abstain, tight top-K/context budget, and ask cache — not selective field extraction.”
 
 **Avoid:**
 
@@ -229,7 +299,7 @@ Small corpus = fewer LLM calls during demos and evals → stay inside free quota
 
 ---
 
-## 14. Phase 2 / later (optional spend)
+## 15. Phase 2 / later (optional spend)
 
 | Spend | Why |
 |-------|-----|
@@ -241,7 +311,7 @@ Not required if local + GitHub + metrics README are solid.
 
 ---
 
-## 15. Decision log
+## 16. Decision log
 
 | Date | Decision |
 |------|----------|
@@ -250,3 +320,4 @@ Not required if local + GitHub + metrics README are solid.
 | 2026-10-03 | Embeddings/rerank stay local to protect free-tier quotas |
 | 2026-10-03 | Adapter stays OpenAI-compatible (`LLM_BASE_URL` + `OPENAI_API_KEY` + `LLM_MODEL`) |
 | 2026-10-03 | Optional Upstash Redis / Vector / QStash data plane documented |
+| 2026-10-04 | Documented runtime cost levers (CPU/memory/DB/tokens); full-PDF + full-text chunking stays; cost = retrieve less / generate short |
