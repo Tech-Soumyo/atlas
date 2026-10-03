@@ -1,0 +1,13 @@
+# Optional Playwright smoke (wired later in M5+). Placeholder keeps the path reserved.
+name: web-smoke
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Placeholder
+        run: echo "Playwright smoke not enabled yet. Add @playwright/test when M5 UI is ready."

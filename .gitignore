@@ -22,6 +22,11 @@ venv/
 htmlcov/
 dist/
 build/
+.uv/
+*.egg-info
+
+# Tooling
+.pre-commit-cache/
 
 # Node / Next.js
 apps/web/node_modules/

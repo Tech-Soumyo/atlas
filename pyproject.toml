@@ -1,0 +1,109 @@
+[project]
+name = "atlas"
+version = "0.1.0"
+description = "Multi-tenant hybrid RAG platform (workspace root)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "ruff>=0.9.0",
+  "mypy>=1.14.0",
+  "pytest>=8.3.0",
+  "pytest-asyncio>=0.25.0",
+  "pre-commit>=4.0.0",
+  "types-PyYAML>=6.0.12",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = [
+  "apps/api",
+  "apps/worker",
+  "packages/common",
+  "packages/security",
+  "packages/ingestion",
+  "packages/retrieval",
+  "packages/generation",
+  "packages/orchestration",
+  "packages/persistence",
+  "packages/evals",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["apps", "packages", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "UP",
+  "B",
+  "SIM",
+  "RUF",
+]
+ignore = [
+  "E501",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011"]
+"scripts/**" = ["T201"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+show_error_codes = true
+pretty = true
+mypy_path = [
+  "packages/common/src",
+  "packages/security/src",
+  "packages/ingestion/src",
+  "packages/retrieval/src",
+  "packages/generation/src",
+  "packages/orchestration/src",
+  "packages/persistence/src",
+  "packages/evals/src",
+  "apps/api/src",
+  "apps/worker/src",
+]
+packages = [
+  "atlas_common",
+  "atlas_security",
+  "atlas_ingestion",
+  "atlas_retrieval",
+  "atlas_generation",
+  "atlas_orchestration",
+  "atlas_persistence",
+  "atlas_evals",
+  "atlas_api",
+  "atlas_worker",
+]
+exclude = [
+  "apps/web/",
+  "migrations/",
+  "evals/",
+  "data/",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+addopts = "-q"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]

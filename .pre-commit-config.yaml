@@ -1,0 +1,45 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=500"]
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.9
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy (strict)
+        entry: uv run mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+        files: ^(apps/(api|worker)/|packages/|tests/)
+
+      - id: web-prettier
+        name: prettier (apps/web)
+        entry: bash -c 'cd apps/web && npx prettier --write --ignore-unknown "$@"' --
+        language: system
+        files: ^apps/web/
+        types_or: [javascript, jsx, ts, tsx, css, json, yaml, markdown]
+
+      - id: web-eslint
+        name: eslint (apps/web)
+        entry: bash -c 'cd apps/web && npx eslint --max-warnings=0 "$@"' --
+        language: system
+        files: ^apps/web/.*\.(js|jsx|ts|tsx)$
+        pass_filenames: true

@@ -1,0 +1,32 @@
+[project]
+name = "atlas-api"
+version = "0.1.0"
+description = "FastAPI HTTP edge"
+requires-python = ">=3.12"
+dependencies = [
+  "atlas-common",
+  "atlas-security",
+  "atlas-ingestion",
+  "atlas-retrieval",
+  "atlas-generation",
+  "atlas-orchestration",
+  "atlas-persistence",
+  "atlas-evals",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv.sources]
+atlas-common = { workspace = true }
+atlas-security = { workspace = true }
+atlas-ingestion = { workspace = true }
+atlas-retrieval = { workspace = true }
+atlas-generation = { workspace = true }
+atlas-orchestration = { workspace = true }
+atlas-persistence = { workspace = true }
+atlas-evals = { workspace = true }

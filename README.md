@@ -30,6 +30,22 @@ deploy/docker  Containerfiles
 
 See [`STRUCTURE.md`](STRUCTURE.md) for the full tree and dependency rules.
 
+## Tooling (quick)
+
+```bash
+# Python workspace (uv) + Ruff / mypy / pytest / pre-commit
+make install
+make pre-commit-install
+
+# Next.js deps + Prettier
+make install-web
+
+# Local CI gate
+make ci
+```
+
+Useful targets: `make lint`, `make format`, `make typecheck`, `make test`.
+
 ## Status
 
-Scaffolded for **M0**. Implementation starts with Compose + health + empty package imports.
+Scaffolded for **M0**. Tooling is wired; next is Compose + health + package wiring.

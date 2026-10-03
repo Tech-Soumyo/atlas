@@ -1,0 +1,13 @@
+[project]
+name = "atlas-evals"
+version = "0.1.0"
+description = "Retrieval and generation eval metrics"
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -40,8 +40,8 @@ For `/develop tooling`: Ruff + mypy strict; ESLint + Prettier (ESLint already in
 ## Git
 
 - integration: on
-- branch prefix: feat/
-- commit: per-milestone
+- branch: stay on the current branch (usually `main`); do not create feature branches
+- commit: per-milestone (offer commits; push only when asked)
 
 ## Rules
 
