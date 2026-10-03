@@ -1,7 +1,8 @@
 strategy: recursive
-chunk_size_tokens: 512
-chunk_overlap_tokens: 64
+chunk_size: 1000
+chunk_overlap: 200
+# Parent-child deferred past M1 naive loop (kept for later milestones).
 parent_child:
-  enabled: true
+  enabled: false
   child_size_tokens: 256
   parent_size_tokens: 1024

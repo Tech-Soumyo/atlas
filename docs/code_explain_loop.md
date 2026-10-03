@@ -5,6 +5,7 @@ Use this every coding session. Goal: **ship a feature and be able to teach it in
 Sources:
 - Topics: [`../../topics.md`](../../topics.md)
 - **Primary questions (full RAG):** [`../../Questions_RAG_120.md`](../../Questions_RAG_120.md) — Q# = topic #
+- **Interview cards (spoken answers):** [`interview_cards.md`](interview_cards.md)
 - Stack / libs tracker: [`../TECH_STACK.md`](../TECH_STACK.md) (includes Next.js Phase 1)
 - Broader AI Eng (optional): [`../../../Questions_Set_1.md`](../../../Questions_Set_1.md)
 - Talk track (later): `interview_talk_track.md`
@@ -18,8 +19,8 @@ Sources:
 2. Read 3–5 related interview questions BEFORE coding
 3. Implement the slice in Atlas
 4. Out loud (or voice note): answer those questions using YOUR code paths
-5. Write a 5–8 line "Interview card" in the section below / in a note
-6. Tick topics.md rows you can now explain
+5. Write a 5–8 line "Interview card" in [`interview_cards.md`](interview_cards.md)  
+6. Tick topics.md rows you can now explain  
 7. Commit / stop — don’t stack unexplained features
 ```
 

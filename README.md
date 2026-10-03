@@ -30,22 +30,47 @@ deploy/docker  Containerfiles
 
 See [`STRUCTURE.md`](STRUCTURE.md) for the full tree and dependency rules.
 
-## Tooling (quick)
+## Quick start (M0)
 
 ```bash
-# Python workspace (uv) + Ruff / mypy / pytest / pre-commit
+# 1) Env (never commit .env)
+cp .env.example .env
+# For Compose local data plane, prefer:
+#   ATLAS_DATA_PLANE=local
+cp apps/web/.env.example apps/web/.env.local
+
+# 2) Python + web tooling
 make install
+make install-web
 make pre-commit-install
 
-# Next.js deps + Prettier
-make install-web
+# 3) Compose stack (postgres, qdrant, redis, api, worker, web)
+make up
+# equivalent: docker compose up --build
 
-# Local CI gate
+# 4) Smoke checks
+curl -s http://localhost:8000/health
+curl -s http://localhost:8000/ready
+# Web shell: http://localhost:3000  (server-side fetch uses ATLAS_API_INTERNAL_URL)
+
+# 5) Unit tests (no Compose required)
+make test-unit
+```
+
+Compose forces `ATLAS_DATA_PLANE=local` and service DNS URLs for postgres/redis/qdrant even if your host `.env` points at cloud services. Secrets stay in `.env` (gitignored).
+
+Stop the stack with `make down`.
+
+## Tooling
+
+```bash
+make lint
+make format
+make typecheck
+make test
 make ci
 ```
 
-Useful targets: `make lint`, `make format`, `make typecheck`, `make test`.
-
 ## Status
 
-Scaffolded for **M0**. Tooling is wired; next is Compose + health + package wiring.
+**M0 foundations:** Compose stack, `packages/common` config, FastAPI `/health` + `/ready`, worker heartbeat, Next.js health shell, pytest smoke.

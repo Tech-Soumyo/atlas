@@ -1,3 +1,5 @@
-"""Atlas package."""
+"""Retrieval façades."""
 
-__version__ = "0.1.0"
+from atlas_retrieval.service import RetrievedHit, retrieve_dense
+
+__all__ = ["RetrievedHit", "retrieve_dense"]

@@ -1,3 +1,5 @@
-"""Atlas package."""
+"""LangGraph orchestration."""
 
-__version__ = "0.1.0"
+from atlas_orchestration.service import AskResult, run_ask
+
+__all__ = ["AskResult", "run_ask"]

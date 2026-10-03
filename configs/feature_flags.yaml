@@ -4,3 +4,4 @@ enable_mmr: false
 enable_xgb_rerank: false
 enable_agentic: false
 enable_semantic_chunking: false
+enable_response_cache: true

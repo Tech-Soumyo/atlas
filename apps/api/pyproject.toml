@@ -12,7 +12,19 @@ dependencies = [
   "atlas-orchestration",
   "atlas-persistence",
   "atlas-evals",
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.34.0",
+  "httpx>=0.28.0",
+  "redis>=5.2.0",
+  "psycopg[binary]>=3.2.0",
+  "python-multipart>=0.0.20",
+  "sqlalchemy[asyncio]>=2.0.36",
+  "arq>=0.26.0",
+  "pymupdf>=1.25.0",
 ]
+
+[project.scripts]
+atlas-api = "atlas_api.main:app"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -30,3 +42,6 @@ atlas-generation = { workspace = true }
 atlas-orchestration = { workspace = true }
 atlas-persistence = { workspace = true }
 atlas-evals = { workspace = true }
+
+[tool.fastapi]
+entrypoint = "atlas_api.main:app"

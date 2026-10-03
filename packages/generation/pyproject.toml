@@ -3,7 +3,10 @@ name = "atlas-generation"
 version = "0.1.0"
 description = "LLM client, cites, abstain"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+  "atlas-common",
+  "openai>=1.60.0",
+]
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -11,3 +14,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.uv.sources]
+atlas-common = { workspace = true }

@@ -3,7 +3,15 @@ name = "atlas-persistence"
 version = "0.1.0"
 description = "Postgres, Redis, object store adapters"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+  "atlas-common",
+  "sqlalchemy[asyncio]>=2.0.36",
+  "psycopg[binary,pool]>=3.2.0",
+  "alembic>=1.14.0",
+  "qdrant-client>=1.13.0",
+  "redis>=5.2.0",
+  "arq>=0.26.0",
+]
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -11,3 +19,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.uv.sources]
+atlas-common = { workspace = true }

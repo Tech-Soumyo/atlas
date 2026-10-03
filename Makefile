@@ -1,4 +1,4 @@
-.PHONY: help install install-web lint format typecheck test test-unit ci pre-commit-install up down
+.PHONY: help install install-web lint format typecheck test test-unit ci pre-commit-install up down migrate
 
 help: ## Show targets
 	@grep -E '^[a-zA-Z_-]+:.*?##' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-18s %s\n", $$1, $$2}'
@@ -45,3 +45,6 @@ up: ## Start Compose stack (filled in during M0)
 
 down: ## Stop Compose stack
 	docker compose down
+
+migrate: ## Apply Alembic migrations (uses DATABASE_URL from env)
+	uv run alembic -c migrations/alembic.ini upgrade head

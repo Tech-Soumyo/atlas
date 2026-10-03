@@ -1,0 +1,26 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.12",
+  "typeCheckingMode": "basic",
+  "extraPaths": [
+    "apps/api/src",
+    "apps/worker/src",
+    "packages/common/src",
+    "packages/security/src",
+    "packages/ingestion/src",
+    "packages/retrieval/src",
+    "packages/generation/src",
+    "packages/orchestration/src",
+    "packages/persistence/src",
+    "packages/evals/src"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    ".venv",
+    "apps/web",
+    "data",
+    "evals/reports"
+  ]
+}

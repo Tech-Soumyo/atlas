@@ -8,7 +8,7 @@
 |-------|-------|
 | **Last updated** | 2026-10-03 |
 | **Phase** | 1 — RAG + Next.js E2E |
-| **Status** | Planned (pre-M0) |
+| **Status** | M0 foundations in progress |
 
 ---
 
@@ -235,22 +235,26 @@ Record exact versions when scaffolding so interviews can cite a reproducible sta
 
 | Package | Version | Pinned in | Date |
 |---------|---------|-----------|------|
-| Python | 3.12+_TBD_ | `.python-version` / Docker | |
-| `fastapi` | _TBD_ | root / `apps/api` | |
-| `uvicorn` | _TBD_ | | |
-| `sqlalchemy` / `psycopg` / `alembic` | _TBD_ | | |
-| `langgraph` | _TBD_ | | |
-| `openai` | _TBD_ | | |
-| `qdrant-client` | _TBD_ | | |
-| `redis` | _TBD_ | | |
-| `sentence-transformers` | _TBD_ | | |
-| `ragas` | _TBD_ | | |
+| Python | 3.12 | `.python-version` / Docker | 2026-10-03 |
+| `fastapi` | 0.142.2 | `uv.lock` / `apps/api` | 2026-10-03 |
+| `uvicorn` | 0.54.0 | `uv.lock` | 2026-10-03 |
+| `pydantic` / `pydantic-settings` | 2.13.5 / 2.15.0 | `uv.lock` | 2026-10-03 |
+| `psycopg` | 3.3.6 | `uv.lock` | 2026-10-03 |
+| `sqlalchemy` / `alembic` | _TBD_ | M1–M2 | |
+| `langgraph` | _TBD_ | M1 | |
+| `openai` | _TBD_ | M1 | |
+| `qdrant-client` | _TBD_ | M3 | |
+| `redis` | 8.1.0 | `uv.lock` | 2026-10-03 |
+| `httpx` | 0.28.1 | `uv.lock` | 2026-10-03 |
+| `sentence-transformers` | _TBD_ | M1–M3 | |
+| `ragas` | _TBD_ | M6 | |
 | `upstash-redis` / `upstash-vector` / `qstash` | _TBD_ | optional `[upstash]` | |
-| `next` | _TBD_ | `apps/web/package.json` | |
-| Node | _TBD_ | | |
-| PostgreSQL | 16 | Compose | |
-| Redis | 7 | Compose | |
-| Qdrant | _TBD_ | Compose | |
+| `next` | 16.3.8 | `apps/web/package.json` | 2026-10-03 |
+| `react` / `react-dom` | 19.2.8 | `apps/web/package.json` | 2026-10-03 |
+| Node | 22 (Docker web image) | `deploy/docker/web.Dockerfile` | 2026-10-03 |
+| PostgreSQL | 16 | Compose | 2026-10-03 |
+| Redis | 7 | Compose | 2026-10-03 |
+| Qdrant | v1.13.2 | Compose | 2026-10-03 |
 
 ---
 

@@ -3,7 +3,13 @@ name = "atlas-retrieval"
 version = "0.1.0"
 description = "Dense, sparse, hybrid retrieval"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+  "atlas-common",
+  "atlas-persistence",
+  "qdrant-client>=1.13.0",
+  "sentence-transformers>=3.3.0",
+  "numpy>=2.0.0",
+]
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -11,3 +17,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.uv.sources]
+atlas-common = { workspace = true }
+atlas-persistence = { workspace = true }

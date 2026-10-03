@@ -8,7 +8,16 @@ dependencies = [
   "atlas-security",
   "atlas-ingestion",
   "atlas-persistence",
+  "atlas-retrieval",
+  "redis>=5.2.0",
+  "arq>=0.26.0",
+  "sqlalchemy[asyncio]>=2.0.36",
+  "pymupdf>=1.25.0",
+  "sentence-transformers>=3.3.0",
 ]
+
+[project.scripts]
+atlas-worker = "atlas_worker.main:main"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -22,3 +31,4 @@ atlas-common = { workspace = true }
 atlas-security = { workspace = true }
 atlas-ingestion = { workspace = true }
 atlas-persistence = { workspace = true }
+atlas-retrieval = { workspace = true }

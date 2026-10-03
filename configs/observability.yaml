@@ -1,0 +1,4 @@
+# Non-secret observability tunables
+sample_ratio: 1.0
+log_request_bodies: false
+export_metrics: false

@@ -1,0 +1,5 @@
+# Non-secret security tunables (secrets stay in .env)
+jwt_algorithm: HS256
+require_tenant_header: true
+max_upload_bytes: 20971520
+injection_check_enabled: true

@@ -1,0 +1,23 @@
+project-excludes = [
+    "**/node_modules",
+    "**/__pycache__",
+    ".venv",
+    "apps/web",
+    "data",
+    "evals/reports",
+]
+search-path = [
+    "apps/api/src",
+    "apps/worker/src",
+    "packages/common/src",
+    "packages/security/src",
+    "packages/ingestion/src",
+    "packages/retrieval/src",
+    "packages/generation/src",
+    "packages/orchestration/src",
+    "packages/persistence/src",
+    "packages/evals/src",
+]
+python-version = "3.12.0"
+python-interpreter-path = ".venv/bin/python"
+infer-with-first-use = false

@@ -3,7 +3,14 @@ name = "atlas-orchestration"
 version = "0.1.0"
 description = "LangGraph ask / agentic graphs"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+  "atlas-common",
+  "atlas-persistence",
+  "atlas-retrieval",
+  "atlas-generation",
+  "langgraph>=0.2.0",
+  "langchain-core>=0.3.0",
+]
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -11,3 +18,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.uv.sources]
+atlas-common = { workspace = true }
+atlas-persistence = { workspace = true }
+atlas-retrieval = { workspace = true }
+atlas-generation = { workspace = true }

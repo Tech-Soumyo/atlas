@@ -1,0 +1,1367 @@
+{
+  "version": 1,
+  "skills": {
+    "3d-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/3d-animations/SKILL.md",
+      "computedHash": "7650083ff2f903e832055c441ba960fa3448d8e3cbdda32300c60a5be8db1e24"
+    },
+    "Beanie ODM": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/beanie-odm/SKILL.md",
+      "computedHash": "5fc31267820a1a19e69cc40572df83d5d36cfd492488aaeef6cf414209f1b366"
+    },
+    "Code Quality": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/team-accelerator/skills/code-quality/SKILL.md",
+      "computedHash": "7ca1c845995f82b793aab0935d1096be13b5171c67a54e5214586731038b5156"
+    },
+    "Confluence Documentation Patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/confluence/SKILL.md",
+      "computedHash": "3d03b5c0774fe4b3ac219cb9f834f74608a0e168371f405961dcc5ff13545eb0"
+    },
+    "DevOps Practices": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/team-accelerator/skills/devops-practices/SKILL.md",
+      "computedHash": "0348f9c9301927a04f94e5b70ac72177e4b6a07b8a7ab231bdccb86b57d443f6"
+    },
+    "FastAPI Background Tasks": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/fastapi-background/SKILL.md",
+      "computedHash": "6d4aa47772adca26309a85b6467005a420ab461a1e394ca423a40d68b2eef475"
+    },
+    "FastAPI Caching": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/fastapi-caching/SKILL.md",
+      "computedHash": "43ef0fa2341ae81ff3eda2b1620702e0245f185bd3aae513635661e05134b308"
+    },
+    "FastAPI Kubernetes Deployment": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/fastapi-k8s/SKILL.md",
+      "computedHash": "45f51f06ca7be559a248928b3e226a2c35ab8d9528881d57c12f28b0b07bf656"
+    },
+    "FastAPI Observability": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/fastapi-observability/SKILL.md",
+      "computedHash": "ccaad593a6d9fdee0333f509057b4ff91d63071647bccbd655063a3f604ca841"
+    },
+    "FastAPI Patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/fastapi-patterns/SKILL.md",
+      "computedHash": "4058c0f83089b80c65e445d0195a083ca59f7554f36c734d2d65d68bdf1e4af8"
+    },
+    "FastAPI Real-Time Features": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/fastapi-realtime/SKILL.md",
+      "computedHash": "296f19d31a099806e9a1f8ed0cbb49fdae06cfeb3eecb2bb63d3292f0c93026f"
+    },
+    "Integration Patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/team-accelerator/skills/integration-patterns/SKILL.md",
+      "computedHash": "c4ad66f99177d283f29a11442d2c29d42ca2572a28f9f84dd2ebcbcf33e92a5c"
+    },
+    "Intent-Based Composition": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/marketplace-pro/skills/composition/SKILL.md",
+      "computedHash": "9fb5eb61308fe7849f917c702751c54073cf880715dc582bad2081f41a11c29e"
+    },
+    "Jira Issue Triage and Routing": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/triage/SKILL.md",
+      "computedHash": "4a962552226bee467487f230b136520532923b3daf60ce54de321547e2a9d6df"
+    },
+    "Jira Orchestration Workflow": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/jira-orchestration/SKILL.md",
+      "computedHash": "d862d92549af386a37ac6c712bf1e0fadf0acdb479aa4efa082b4fa57876d22e"
+    },
+    "Keycloak FastAPI Integration": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fastapi-backend/skills/keycloak-fastapi/SKILL.md",
+      "computedHash": "2f44da29402e8dd2b514512c4da0c816169caf795e24f5973f92abdd2009dc93"
+    },
+    "Linear Agents, Sessions and Coding Sessions": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-agents/SKILL.md",
+      "computedHash": "1ac0e1459828defc7c0b76544ef084fee02e8e3d207409ad91897d3ca6273fdf"
+    },
+    "Linear Attachments": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-attachments/SKILL.md",
+      "computedHash": "f9f473449a8f927158bda143f97b0f00a42bfa05f366472e7e5392aaca056cfc"
+    },
+    "Linear GraphQL Patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-graphql/SKILL.md",
+      "computedHash": "34c584bc184140f8eb6d47d701670c5e66ac6277bf48bf26da7a3c5134b4c670"
+    },
+    "Linear OAuth + Actor Authorization": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-oauth/SKILL.md",
+      "computedHash": "663ccf85ad9ea85eb2282534944fd6c144e161026c72dd76b79acf719ee269ae"
+    },
+    "Linear Pagination + Filtering": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-pagination-filtering/SKILL.md",
+      "computedHash": "1e32ae66febd9d83607ae60dc3c29263b50baf5c97b8e02803a028487fb3db43"
+    },
+    "Linear Rate Limiting": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-rate-limiting/SKILL.md",
+      "computedHash": "1861d18133dbb18a9cb85b3e96dfa059ce7c7005bf59cc678f54ecba7c7bce4c"
+    },
+    "Linear SDK Usage": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-sdk/SKILL.md",
+      "computedHash": "b4f0ef5e94a786f1b1b1568f559ae355d0e6d528c4a155f441be89b55911d135"
+    },
+    "Linear VCS Bridge (GitHub and Harness Code)": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/vcs-bridge/SKILL.md",
+      "computedHash": "190b0d9e9ea347e0b4021ced86fa17f7a2ad83b48bd7f268236050f2ea84c0ba"
+    },
+    "Linear Webhooks (Verify, Replay, DLQ)": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/linear-webhooks/SKILL.md",
+      "computedHash": "9d98651a51b3c23122dcee4c019b6324ea2cd30f1abe3493619c6cbadbace219"
+    },
+    "Swarm Orchestration for Linear": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/swarm-orchestration/SKILL.md",
+      "computedHash": "83f08d8a5c2fb3c114aa7d80f4ccb454106eba4b2955a56996b4967438e498bf"
+    },
+    "Workflow Automation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/team-accelerator/skills/workflow-automation/SKILL.md",
+      "computedHash": "e03fe34acb5074b8044761a75666db8e35aade35c06ef320b80d55acba328382"
+    },
+    "a2ui-protocol": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/a2ui-protocol/SKILL.md",
+      "computedHash": "d974edd73e5875efd936bdbee417d94d2053d327d467d672438c9e681720e627"
+    },
+    "accent-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/accent-animations/SKILL.md",
+      "computedHash": "6c2fd5287d3dfada578d9d454595c511cb8db37d33e3363f7a1f1d6825be892e"
+    },
+    "accessibility": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/accessibility/SKILL.md",
+      "computedHash": "4214bc837360095235da66f5f6bc2b08e3748cf89ee5ba95758847f2171bbae8"
+    },
+    "actions-authoring": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/actions-authoring/SKILL.md",
+      "computedHash": "5af340b433835fa08ed4af3a85936b43866967955b90350a366ee95d58aed6dd"
+    },
+    "actions-automation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/actions-automation/SKILL.md",
+      "computedHash": "ba32a2cdab0c570be8cd1957419e9f5ad557ed83059e4f2f3e94f40fbf828bcc"
+    },
+    "advanced-components": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/advanced-components/SKILL.md",
+      "computedHash": "cdca32ff02bd53d5a45058e6d6e16bcc29f9dd7b90806b26d6d50c35ef731d6b"
+    },
+    "advanced-widgets": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/advanced-widgets/SKILL.md",
+      "computedHash": "0dd1d83a1ac6014bb85dc08bc29471d7252d360305e3f9fbf47ea9df9249cbf3"
+    },
+    "ag-ui-protocol": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/ag-ui-protocol/SKILL.md",
+      "computedHash": "32fdc8c05a1a108456fa43c70ca15c18606e64f7c96c18929160bef94cbcd6a1"
+    },
+    "agentic-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/agentic-patterns/SKILL.md",
+      "computedHash": "445283abbe78d794d7172bd9bd1e092540db675ac56fd91d4477409a4a8a6741"
+    },
+    "animations-transitions": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/animations-transitions/SKILL.md",
+      "computedHash": "de2ee9ffb64f561430a2812a393e9f30293bbbda1b4cf6233aac28d5e547c944"
+    },
+    "aspnet-core-apis": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/aspnet-core-apis/SKILL.md",
+      "computedHash": "1ec885efd9d48e1188ca229f49575f3f00fc5128cca6ea384f91758fd570a11d"
+    },
+    "atlassianapi": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/atlassian-api/SKILL.md",
+      "computedHash": "8c44db26c671190674cb4bf0e746f3116bd2e3cc869a0203b4031d32f7da53ca"
+    },
+    "authentication": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/authentication/SKILL.md",
+      "computedHash": "39b48b79610aafd2e4f5675b18fc158e162754b3c963c395fdab232620c23fe5"
+    },
+    "aws": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/aws/SKILL.md",
+      "computedHash": "eff30cba316498fc5b75696d14a8fd8adcc321dfbe714affa064cbbae635e54a"
+    },
+    "background-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/background-animations/SKILL.md",
+      "computedHash": "806d3a9b7c49f63e0d4a16aa438263c7b41ff6129854960bed9b076316741500"
+    },
+    "base-headless": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/base-headless/SKILL.md",
+      "computedHash": "fccdb8eae699891a896a0feb63d52819b95ac07e2049799da16d9e6458c60c2a"
+    },
+    "batch-processing": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/batch-processing/SKILL.md",
+      "computedHash": "1f581951f875a75a5ff6988ed84083a2b9460cb6838af2f6a955538b5a7822a1"
+    },
+    "blazor-auth-security": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/blazor-auth-security/SKILL.md",
+      "computedHash": "40994b23a5d23fc5efc43bdbd7e4aaca0a1a76962b09ec47235e62dbc8cbc435"
+    },
+    "blazor-components": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/blazor-components/SKILL.md",
+      "computedHash": "ec7b213cdba42c68de0838b83291176c0e28cb261230fc45fb55127fcd743621"
+    },
+    "blazor-forms-validation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/blazor-forms-validation/SKILL.md",
+      "computedHash": "ec75318f8271e58f172c466bd2452865403a2f37f4bffe832a54b88659319ca2"
+    },
+    "blazor-js-interop": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/blazor-js-interop/SKILL.md",
+      "computedHash": "93374cedaf698f5449eeff916322c9d60a892b2bbc3ab08554ceaeee007c2c70"
+    },
+    "blazor-performance": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/blazor-performance/SKILL.md",
+      "computedHash": "96713443eb4f3ffa3df136c0247727ece413ac419d13a8f5f44192a3738e7101"
+    },
+    "blazor-testing": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/blazor-testing/SKILL.md",
+      "computedHash": "403dacd375d62d3d130d7b864766fceaac13e8ebfe272c36f24314730fe4ce9a"
+    },
+    "camera-nvr": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/camera-nvr/SKILL.md",
+      "computedHash": "1115317d4257b6b469b72104a608e9d3be5e2bd89728669714894cc2fb1c2b11"
+    },
+    "cc-auto-mode": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-auto-mode/SKILL.md",
+      "computedHash": "b6e6cb4d00d58708218560662c0237a692d196bbb453c3f2e9b17d052f790a40"
+    },
+    "cc-deep-code-intelligence": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-deep-code-intelligence/SKILL.md",
+      "computedHash": "fa67b743840a525c7b3fba1a7f56e055cd80f5db7a03316b65da0b257e49d105"
+    },
+    "cc-hook-authoring": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-hook-authoring/SKILL.md",
+      "computedHash": "9b2d6113a5176c3209723c7429c8d3e7f8e31313df5af4e0e6c915780b41e833"
+    },
+    "cc-monitor-tool": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-monitor-tool/SKILL.md",
+      "computedHash": "d0d44ea104b4ec83ce54734908765670216553f757132b120ee2ec74001395ee"
+    },
+    "cc-orchestration-blackboard": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-orchestration-blackboard/SKILL.md",
+      "computedHash": "010fb40e18bfd68f17f95a9a8e4a31a96dcac383301be0fdefc43ae9beb5121c"
+    },
+    "cc-prompt-budget-preflight": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-prompt-budget-preflight/SKILL.md",
+      "computedHash": "43661bbda6d8e38bc3993f7eb336382ff762127b22d54de6c2c900904cf46ede"
+    },
+    "cc-second-brain": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-second-brain/SKILL.md",
+      "computedHash": "499c6e7712c5dc025729a0742169ab8b1e69e87645f4e6c6a615103407ae0927"
+    },
+    "cc-stack-setup": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-stack-setup/SKILL.md",
+      "computedHash": "33907efc0e6f0a0fe299842b4410b362b7c402407af1159d28f78e25296b1697"
+    },
+    "cc-stack-sync": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-stack-sync/SKILL.md",
+      "computedHash": "fa06217179190fc28062e33d8fa90116c398c64b92a7052aaefc7fa18f0a6071"
+    },
+    "cc-ultraplan": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-ultraplan/SKILL.md",
+      "computedHash": "57e569a9642776442eaa8239faa75836be59426dbce360bcc826088bf99499a8"
+    },
+    "cc-verify-between-waves": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-verify-between-waves/SKILL.md",
+      "computedHash": "8b05e3cab5134e01eb8bf21dc82d83e200a8e8cab8f8c8fb9e217a3573287984"
+    },
+    "cc-worktree-management": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-expert/skills/cc-worktree-management/SKILL.md",
+      "computedHash": "796e40db7aa258dc28e81beb96b0232b9071af80a4c5ab145089e75aecb39bdd"
+    },
+    "charts": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/charts/SKILL.md",
+      "computedHash": "6568cee69950c67125795647b211a8f22795bab47ca6fead7a63d8ca3d42bc1b"
+    },
+    "ci-forensics": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/ci-forensics/SKILL.md",
+      "computedHash": "f087e99c63664a204aabbf1580cf20432c1bf252e97a1018cf5f86c587dee36e"
+    },
+    "citations-retrieval": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/citations-retrieval/SKILL.md",
+      "computedHash": "19fc86040b931ca46578ebbfa225639255725de80c3abd7c07566ea5c6e4643c"
+    },
+    "claude-code-automation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/work-automation/skills/claude-code-automation/SKILL.md",
+      "computedHash": "8f67f6386fb5402ee7c2a091e53ac21df8cee4e764146d8504856a218157e1cf"
+    },
+    "clean-architecture": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/clean-architecture/SKILL.md",
+      "computedHash": "27b98132a3d33c034a5ae7195cad0da06b0232736c72dc9a7d01ef36b403febd"
+    },
+    "cloud-native-deploy": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/cloud-native-deploy/SKILL.md",
+      "computedHash": "894a821d652820c5c64794a7b94d4c6a75ec763bc25dbc1a7ed24839b9ae7572"
+    },
+    "code-review": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/code-review/SKILL.md",
+      "computedHash": "123a3859eb0260721d9bd016af378ace42642bd946a9cc8c3dfef79aecad6eea"
+    },
+    "complex-reasoning": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/complex-reasoning/SKILL.md",
+      "computedHash": "9ecb72acdbb996b661c36d54f0163381713805bb6d90a94fe43a30f66454bf09"
+    },
+    "components": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/components/SKILL.md",
+      "computedHash": "9e6ea685397e2d7e6168a2e64bfe9fc5f1646741ed9ea71c6e1bc9e046056f51"
+    },
+    "confluence": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/confluence/SKILL.md",
+      "computedHash": "b70205cc49ac80a8149ad41f9d424f2882bbf89c5a91681be0dceea8093554dd"
+    },
+    "contextual-intelligence": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/marketplace-pro/skills/intelligence/SKILL.md",
+      "computedHash": "d7e59b6ef5f639a51f291b813ead33c0c481b27ad302fb8f44e833e3c609f0ec"
+    },
+    "cowork-sessions": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/cowork-marketplace/skills/cowork-sessions/SKILL.md",
+      "computedHash": "2cbd14b498309f7bd56bd7bbb9c2e92066af18843fb623d6540cecd5087894bf"
+    },
+    "creative-effects": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/creative-effects/SKILL.md",
+      "computedHash": "7fb0ed806d89fcb31ad2b276679507c44ea703bb09dfb1c1afeef00bfc4228c9"
+    },
+    "csharp-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/csharp-patterns/SKILL.md",
+      "computedHash": "fdf4837332fc16eb931deceba2aa1247bca719446efe9a8c624a36bd92d0dcea"
+    },
+    "css-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/css-animations/SKILL.md",
+      "computedHash": "00ddf936f8b16cf8598e0fd0c1f49b7377cfc59a91de8e5a51dba39ece109907"
+    },
+    "css-variables-pigment": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/css-variables-pigment/SKILL.md",
+      "computedHash": "bd0d87732af35c8876efab2bc119d3f3cf87dc9e9931c3cc8e6acab12fed9d60"
+    },
+    "data-grid": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/data-grid/SKILL.md",
+      "computedHash": "5f5b9989beea042fa2f850bf35005d8d364e551465d14002246f77bd2dcf1b13"
+    },
+    "database": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/database/SKILL.md",
+      "computedHash": "d127845c0e8225de5b7d258716c7026a8fd4c25ca1f5639009a029816fde0322"
+    },
+    "date-pickers": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/date-pickers/SKILL.md",
+      "computedHash": "a5ec239cdf5f048498046ff928279b1e07009808b7987456f5a4476d2a7caf2b"
+    },
+    "ddd-cqrs-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/ddd-cqrs-patterns/SKILL.md",
+      "computedHash": "77e8180612b7c242e85e478bd7464020fd7084c5724c10a1bfa3ea057b939c78"
+    },
+    "debugging": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/debugging/SKILL.md",
+      "computedHash": "84ae79b2e352aa62352e4c54f6d74d477a579b9defd688fd921da639afc92382"
+    },
+    "deep-analysis": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/deep-analysis/SKILL.md",
+      "computedHash": "77b9e3ac3690a08582f6a6a757e97ea9a646fb897a92b6fb2cde856a57ec0fbc"
+    },
+    "deep-research": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/deep-research/SKILL.md",
+      "computedHash": "a309c0fe91641dd25fe90c9f7c44f761d375d3b92593c259e914dfaea9bbafe3"
+    },
+    "design-system": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/design-system/SKILL.md",
+      "computedHash": "d34bbf043207a75e9ace15f65064af8b10f500111e164ab007f6d160295c3073"
+    },
+    "devstudio": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/marketplace-pro/skills/devstudio/SKILL.md",
+      "computedHash": "c63ca1bb65a4c476459165e7af3973dc8314e672d1d65e4f89c59ff0519cb093"
+    },
+    "docker-build": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/docker-build/SKILL.md",
+      "computedHash": "9164c4e63818cac21b23242a37f78df049ab171630a267502342206f93786f7e"
+    },
+    "docker-containers": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/docker-containers/SKILL.md",
+      "computedHash": "69904bc8fd97be46ed202f4d5904244be2241c4e2a2d762e38df9f17caf8a425"
+    },
+    "dotnet-ai": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/dotnet-ai/SKILL.md",
+      "computedHash": "6212215e0c712742cf87333301806667a2c7e790d43d06185ec44e79b47a2696"
+    },
+    "dotnet-aspire": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/dotnet-aspire/SKILL.md",
+      "computedHash": "5ddee984c79ed81884fce5b490f63fbf9b1efc1a48875d1abe86af65f6779a81"
+    },
+    "ecosystem-integrations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/ecosystem-integrations/SKILL.md",
+      "computedHash": "d3ede5d1c52911650f56dc75612ee647fba553aec77f4422050919c19f0ff9a8"
+    },
+    "energy-management": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/energy-management/SKILL.md",
+      "computedHash": "ddac166d1836d9490b9b02affabe9683da0f4fbd254fac77e30bfda37f4951c6"
+    },
+    "entity-driven-ui": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/entity-driven-ui/SKILL.md",
+      "computedHash": "758e88d5b030626b00bc267efe8ff702eda425ccfd3d19ab1d58f5b0e92ba259"
+    },
+    "entity-framework": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/entity-framework/SKILL.md",
+      "computedHash": "4c4c0c42b25c09ff34bc97ae53d06d5f96dc10084cc3257ac8965cf94398bc7f"
+    },
+    "evidence-rules": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/evidence-rules/SKILL.md",
+      "computedHash": "c57da1085a83c1f3c0b879a84e67d6575d7e38f84ef4e89223ad3b2aaa98c1a0"
+    },
+    "extended-thinking": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/extended-thinking/SKILL.md",
+      "computedHash": "e3dc5143dede646f6cd96bb02074742ab7bbd657adda685886651c1fc239e738"
+    },
+    "fastapi": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/fastapi/SKILL.md",
+      "computedHash": "c8133f4a2d367390964b1be511be08298d2eecd198a3ee87a64e93503f0da27c"
+    },
+    "fastapi-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fullstack-iac/skills/fastapi-patterns/SKILL.md",
+      "computedHash": "b86e0e98503854f995bf914410a45e987c4d08dac77d5b6b4d0b2b0f7e7fef96"
+    },
+    "federation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/marketplace-pro/skills/federation/SKILL.md",
+      "computedHash": "031fc91a6112b2ef898d60b42757071d5b98b1db2668bad4942daff2483cd758"
+    },
+    "flaskapi": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/flask-api/SKILL.md",
+      "computedHash": "082fb504016a52fd6a46b428867e1065616f500721104dd767d32122589b6a2f"
+    },
+    "fleet-protocol": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/fleet-protocol/SKILL.md",
+      "computedHash": "0fcfd7ef57e6ef84546d7b059a78af9dbd6038721d743774ea07cdeed1168967"
+    },
+    "fleet-roles": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/fleet-roles/SKILL.md",
+      "computedHash": "2ac0521949dfc89f55cffc8229dd691b4d5c142a9d2b3cb4e1a033f717dd3796"
+    },
+    "forms-validation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/forms-validation/SKILL.md",
+      "computedHash": "92585694d93e24c823a449d9ad21562b5e50769bb735eb158ea4d190b59302a0"
+    },
+    "framer-motion": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/framer-motion/SKILL.md",
+      "computedHash": "d593fb565e19c387e1e8093b5b35a4b6d609ed70a46e789a2685be6b154e5b15"
+    },
+    "gcp": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/gcp/SKILL.md",
+      "computedHash": "96bfb97482316befa8e5bfc38ebafc79cc9c58f547c3017b48e94597c84a4112"
+    },
+    "gh-mcp": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/gh-mcp/SKILL.md",
+      "computedHash": "a83f6f87237214a760a68d60bc460e13057ecd95b4a3d15d36237ccfe0a00440"
+    },
+    "github-agents": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/github-agents/SKILL.md",
+      "computedHash": "d7e0497b461019b29e2accc65f48b6446ba851650c901de771f59b6fc231a5ed"
+    },
+    "github-auth": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/github-auth/SKILL.md",
+      "computedHash": "ce0cf795a43c8f756c6d61db42e9935c0fb61556cbc4222b7c949a77d133495c"
+    },
+    "github-issue-model": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/github-issue-model/SKILL.md",
+      "computedHash": "2e6ea764e773f47672d4dd392e46d87cc9408e7903b65abaf0cc5599d449888a"
+    },
+    "github-orchestration": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/github-orchestration/SKILL.md",
+      "computedHash": "205e8eff4ea9d760c554e677037e011d275a4eaa5a60df405ee56239d7b8e6be"
+    },
+    "github-projects": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/github-projects/SKILL.md",
+      "computedHash": "1f001bf28a88198daa0aeb817eaf18a7b18448b0fcc216212a2a757c6304a7a0"
+    },
+    "gitworfkflows": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/git-workflows/SKILL.md",
+      "computedHash": "c663e1ab73ace61974beca7ad866d36320cf616af39e1b98b2362d520dd40fb1"
+    },
+    "graphql": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/graphql/SKILL.md",
+      "computedHash": "e1c6ff5ae95190caac66d6b666cf89021496de27ae775c1e7aafc231e2805ae6"
+    },
+    "grpc-services": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/grpc-services/SKILL.md",
+      "computedHash": "24b6e67164176384558fba3171382adae220d13cc037dc6b20559990654dae7b"
+    },
+    "gsap": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/gsap/SKILL.md",
+      "computedHash": "bdf575def6adde7661bd9c313e80624a6716d5e140c3cc3d1c96f1f791c1acca"
+    },
+    "ha-automation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/ha-automation/SKILL.md",
+      "computedHash": "67e18f8678f6b4b71517e9ea8f4cc46cce7be6f88e42ab46d356dd77599a8b7f"
+    },
+    "ha-core": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/ha-core/SKILL.md",
+      "computedHash": "ba3d0064ee75f2c11343487356037b53a10dd09793140665877b55d49777a5d4"
+    },
+    "harness-automation": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/work-automation/skills/harness-automation/SKILL.md",
+      "computedHash": "017204c3d243cdc9f9e084f78547389cb63ef2d4d4a2380d6f37cb18cd509bff"
+    },
+    "harness-cd": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/harness-cd/SKILL.md",
+      "computedHash": "f0fbb295ef36d7cf66deda2283be649226e599efb047d0fd7cf52751eb05795f"
+    },
+    "harness-ci": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/harness-ci/SKILL.md",
+      "computedHash": "4216784edaf1f0aebdc5467bd5f53460a7ce09ff475a93cbe46d5417a7f9544a"
+    },
+    "harness-code-integration": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/harness-code-integration/SKILL.md",
+      "computedHash": "72cc3a13695cfd49b80c9d3ac2d3fc6e5744229b47e706ed52568e9a865634eb"
+    },
+    "harness-eks-deployments": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/harness-eks-deployments/SKILL.md",
+      "computedHash": "d43870e4938fc4a902de840f8f4e6d48c4dee0b74bbd72497006295709dd2658"
+    },
+    "harness-expert": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-templating-plugin/skills/harness-expert/SKILL.md",
+      "computedHash": "dbcbd49ce7d48f03679a7d57fac587b7480a0d673118aaa6ba769f2e55081cbc"
+    },
+    "harness-keycloak-auth": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/harness-keycloak-auth/SKILL.md",
+      "computedHash": "12ca6237af138f58be8b592803740ef12d4280b09a0b50ca64a72e2bb2ff6b50"
+    },
+    "harness-mcp": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/harness-mcp/SKILL.md",
+      "computedHash": "8f5c6b7469b6975b8cca631d91f89366a91dd2b40abb3a39eb4df470a6fc3429"
+    },
+    "harness-pipeline": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/harness-pipeline/SKILL.md",
+      "computedHash": "8b7cc93e904528cbdd5c1a174a43c369115b961619568f2569aa37d05a01f420"
+    },
+    "harness-platform": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/harness-platform/SKILL.md",
+      "computedHash": "c4c6f7564c0671686160fb7e35bb198413a81d090858258ff5f742363feb10c5"
+    },
+    "heartbeat-monitor": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/heartbeat-monitor/SKILL.md",
+      "computedHash": "a477940e6be54f516328076f700a6a1bfa1ae4bac0e93663ddee428014313905"
+    },
+    "helm-deploy": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/helm-deploy/SKILL.md",
+      "computedHash": "ad2c9175679546042092de1c1996c416da4bf213b87b16340a90a72b33fc6bc2"
+    },
+    "helm-development": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/helm-development/SKILL.md",
+      "computedHash": "db0e182b8b14bfd3e0ac68a63dffb6b74564ab040d73891ea1c9bc227bac3c25"
+    },
+    "host-capability-matrix": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/host-capability-matrix/SKILL.md",
+      "computedHash": "f4a6a0cf382b0292644d05e39e2deb63279ce4746079a1eef9f0aa0cd600feb0"
+    },
+    "i18n-rtl": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/i18n-rtl/SKILL.md",
+      "computedHash": "f104b73688ed1c711632f631d4716b7adae57b922982893983e89d8d6a3fb466"
+    },
+    "innovation-radar": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/upgrade-suggestion/skills/innovation-radar/SKILL.md",
+      "computedHash": "a461ec99ba2e941fcd59c9f2d6c833d77f062d1e0307e375ba836ec0f756c8a0"
+    },
+    "jira": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira/SKILL.md",
+      "computedHash": "5913b06f6b92f08759a8c6c0e607fc5e0e17b3b324fa7cfc9ee947d2971fde91"
+    },
+    "jira:branch": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-branch/SKILL.md",
+      "computedHash": "3e6b4835d59153a5122f3b36d453d9ecde44b825a841f36feb21ff78ff8a49ed"
+    },
+    "jira:commit": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-commit/SKILL.md",
+      "computedHash": "6fb00e826ef4310e227a17607c3b2861dd4aa28aaf0a5027a756bfdc10b96b2a"
+    },
+    "jira:pr": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-pr/SKILL.md",
+      "computedHash": "56e05b58f33871e12bdcc6ae575f19184d57d7a2c2256b6e4c64de6463669593"
+    },
+    "jira:prepare": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-prepare/SKILL.md",
+      "computedHash": "9bd0988ca5f8f9366d2d6c9cbf8e7100ac850d3f24e7450b48b8a5473d006ebe"
+    },
+    "jira:review": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-review/SKILL.md",
+      "computedHash": "7110e7c0ab2b7afb5f15bf0026c8005dc34d3cdcc41a8fe1f8dc9a8ec0a88600"
+    },
+    "jira:status": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-status/SKILL.md",
+      "computedHash": "9ab1e03625ab31056b3dcca464517f1e8eebc9e81e12d17a5f9f342ae59153f1"
+    },
+    "jira:sync": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-sync/SKILL.md",
+      "computedHash": "8537ac2d90baf33f3cf911b34f82aaaef8d01f855c687466d9cea744f9f14e6e"
+    },
+    "jira:triage": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-triage/SKILL.md",
+      "computedHash": "df0666bc71e383d20d319c35e1e10ddab0d63e73c861cc145fd951a5e663bc94"
+    },
+    "jira:work": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/jira-work/SKILL.md",
+      "computedHash": "32ee0f22580dcf79e34713eed51226ca55347507705ab99f987ec6d1a7782937"
+    },
+    "joy-ui": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/joy-ui/SKILL.md",
+      "computedHash": "7c888d9323df47e07572c82d0f0cb356e3295973666ad66d31c9c9eb5a187e57"
+    },
+    "k8s-image-audit": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/k8s-image-audit/SKILL.md",
+      "computedHash": "10e8dee993ce7146b4b37113799c5853aa096320cfe7349ab3e61f2a48856b30"
+    },
+    "kanban": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/kanban/SKILL.md",
+      "computedHash": "aa5ad8564e7666ac01355b9f535028cc561b7b60c0dbf51ac2d4a78b45d5a588"
+    },
+    "keycloak": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/keycloak/SKILL.md",
+      "computedHash": "a13e430fc75a3c11b60ab2aa834e63fe08f5c8507cb611af9926298f92700f41"
+    },
+    "keycloak-admin": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/lobbi-platform-manager/skills/keycloak-admin/SKILL.md",
+      "computedHash": "bf192217ddc1955f25f222559822ec8bdb1e55cf0a68004fae53a2337b5f2536"
+    },
+    "kubernetes": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/kubernetes/SKILL.md",
+      "computedHash": "8b5ffbb027f58d9d7dd628ae3a3e36e29ca09956d75b1046b974086fa41e10f3"
+    },
+    "layout-responsive": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/layout-responsive/SKILL.md",
+      "computedHash": "22e1187078291c67267428ac1107fc4614539d14180e79dcfdaa7cec01ba777b"
+    },
+    "llmintegration": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/llm-integration/SKILL.md",
+      "computedHash": "46bf135478891c7d1e58f0f56298ee7265eeccf553de517394277f4adeb6c4d3"
+    },
+    "local-eks-development": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/local-eks-development/SKILL.md",
+      "computedHash": "c3341cf45a04b339ff26104f84387d1be3df4bba1c40b37c18063ba54d56720e"
+    },
+    "local-llm": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/local-llm/SKILL.md",
+      "computedHash": "283618260a2d4209c072c9920b9079a1a8a4a40d107828e6395e42b01dbc417b"
+    },
+    "lovelace-design": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/lovelace-design/SKILL.md",
+      "computedHash": "0e163ecda8b233949e390782a2582b1b5a63ec50b2867f4c5365a8a6fb9335ff"
+    },
+    "m365-copilot-packaging": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/m365-copilot-packaging/SKILL.md",
+      "computedHash": "040438188dbe037a48619eb5605961cb0e045cb28524eab2c66a47991d52ac64"
+    },
+    "mcp-apps-protocol": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/mcp-apps-protocol/SKILL.md",
+      "computedHash": "a1c4aae09cfbe0051ffc6af5200136b4356343c53a9546620319b1759fee726a"
+    },
+    "mcp-apps-sdk": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/mcp-apps-sdk/SKILL.md",
+      "computedHash": "2fde4ab385a398604018c596f8e475ba586ed71bae18448c3c0f47dfddf045db"
+    },
+    "mcp-ui-sdk": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/mcp-ui-sdk/SKILL.md",
+      "computedHash": "0d5eb3b06b5f0b878c64e903ea16b8abd56b404d3da4a5200d4cf5e299f3a321"
+    },
+    "merge-queue": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/merge-queue/SKILL.md",
+      "computedHash": "8791ccc7a81a61cb5cc45aa23ad03c92f929fcf0f8e439e9187fa158a965b5cc"
+    },
+    "mern-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/lobbi-platform-manager/skills/mern-patterns/SKILL.md",
+      "computedHash": "886a5bb0b68e130663febd6af79f115872413cb282a0e2fc8557b9dca599ea2b"
+    },
+    "microservices-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/microservices-patterns/SKILL.md",
+      "computedHash": "a04e21af6371c5639c27e63c2e0daa5ee8898320d2222c3d3b09d0f7e0b23a6b"
+    },
+    "migration": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/migration/SKILL.md",
+      "computedHash": "093c5c573cf8df2c49af1550228bb724fc2972ed6f22153cc9c865941e75c190"
+    },
+    "mongodb-atlas": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/mongodb-atlas/SKILL.md",
+      "computedHash": "4b35e66a6b76651522057fa81d5c65bd2b289411ffca64b3a4c86ed3a027ad4a"
+    },
+    "mui-theming": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/theming/SKILL.md",
+      "computedHash": "59afe7b62e10cd8ee77c05421fa98c3cb6ce20ca74096225b1cc3febad50d59a"
+    },
+    "multi-tenant": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/lobbi-platform-manager/skills/multi-tenant/SKILL.md",
+      "computedHash": "5bfeebb7eef8ef10d83b488ca7be9f0a23836c6b6818c25d5742108c6f322272"
+    },
+    "nextjs": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/nextjs/SKILL.md",
+      "computedHash": "af9d1a1990bfac4230d6084504642e02b32f1dd9d303851b00c14bc41878034b"
+    },
+    "openai-apps-sdk": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/openai-apps-sdk/SKILL.md",
+      "computedHash": "e67cdd6304db82f57d8c51836ca5c3054648cb6fbd759d8b6a47cee3a77bc6b0"
+    },
+    "pdf": {
+      "source": "letta-ai/skills",
+      "sourceType": "github",
+      "skillPath": "tools/pdf/SKILL.md",
+      "computedHash": "9ae05c94f31c08b24285430037831757d99af2d0c8aa10ab533325a53e0b18d2"
+    },
+    "performance": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/performance/SKILL.md",
+      "computedHash": "454d5882933b37463cc6d4f1e68991a7470b6cfb4e1633895083502441eea3ac"
+    },
+    "plugin-catalog": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/cowork-marketplace/skills/plugin-catalog/SKILL.md",
+      "computedHash": "b4a1b9d7a7e8235121b4b901ec468acf720f27488b33cae4cbb26416039871c0"
+    },
+    "plugin-packaging": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/cowork-marketplace/skills/plugin-packaging/SKILL.md",
+      "computedHash": "7efb07e2eaf474ae2dc8e8afab38d53421e9da8cc53a3f48140e6361ec2ecf1b"
+    },
+    "pr-craft": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/pr-craft/SKILL.md",
+      "computedHash": "f49269743eb5055e57800bf3d218c0cdff47d5676427a05b3a70992056c4aba1"
+    },
+    "pr-workflow": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/pr-workflow/SKILL.md",
+      "computedHash": "cb7190c9ca8694b83c6dde60df11178950724a3edd128a88555d3f4e0ba33e5f"
+    },
+    "project-fingerprinting": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/upgrade-suggestion/skills/project-fingerprinting/SKILL.md",
+      "computedHash": "6e4fd1fa53d8178f6674477169b5342d0ff538357a44e746f61b983d7a4f72d7"
+    },
+    "project-management-integrations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/project-management-integrations/SKILL.md",
+      "computedHash": "7a5376d07564d80adcfbd2be206fa8d2b9303bfa8b96a70f60b147016a654bc2"
+    },
+    "project-scaffolding": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-templating-plugin/skills/project-scaffolding/SKILL.md",
+      "computedHash": "8a89b0426888ff3a71532ca3e73121cafc75d9849a385ac4be7dd1916e5d0685"
+    },
+    "prompt-caching": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/prompt-caching/SKILL.md",
+      "computedHash": "c5fca38dc48ff3d41d4bfce558bbff3b038fe2b80f72ceb6f45aba9ccc47f2b8"
+    },
+    "protocol-selection": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/protocol-selection/SKILL.md",
+      "computedHash": "496bff6be651d86256f5718e699dad595842afddc8da468d250395cb12c0c0ba"
+    },
+    "react": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/react/SKILL.md",
+      "computedHash": "1a4d7772d0f325a9c097640f0f1641228e21eae2cfbb0bde7ff0a549d81bc1e2"
+    },
+    "react-vite": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/fullstack-iac/skills/react-vite/SKILL.md",
+      "computedHash": "cf1240dccb893fb2386aeb0835438112993cefe149980496f738ea424f6d725c"
+    },
+    "reasoning": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/reasoning/SKILL.md",
+      "computedHash": "8b3d54efe6313e0e7544780df2133c35e5c549b47ca070ce1e1ce33e02bdec45"
+    },
+    "redis": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/redis/SKILL.md",
+      "computedHash": "7b39ce8095ed9a63b1139ea362b1f4f197b900c110896d007e6d970b510a5b92"
+    },
+    "release-engineering": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/release-engineering/SKILL.md",
+      "computedHash": "02e07ee4f9a28688e8447a3b9b3506a075b3c72d6a41a9b73ea0c99db5d25bf7"
+    },
+    "repo-intelligence": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/repo-intelligence/SKILL.md",
+      "computedHash": "ef056f97dcdb28a7d718bc1ff7b23a6f39cd6effdf6c1c97002ecbd29a3326ff"
+    },
+    "restapi": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/rest-api/SKILL.md",
+      "computedHash": "4350707732a62826ca5944ac740c06e684ec4b5fa34ddf7f7e34b54db02c0ad5"
+    },
+    "review-protocols": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/review-protocols/SKILL.md",
+      "computedHash": "c038f38402fa874822c232a3f6618f1b4b5378a790878f97f40be324922db300"
+    },
+    "scrape-docs": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/scrape-docs/SKILL.md",
+      "computedHash": "ec3323657dc10ad104fae1b43cd9313c369a46c8eb1c8212ce3590a9d662f259"
+    },
+    "scroll-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/scroll-animations/SKILL.md",
+      "computedHash": "188259a5adfeb262c22dba2c043a0fdaacebae6a3d4a9b637974ab8aadd3d25a"
+    },
+    "scrum": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/scrum/SKILL.md",
+      "computedHash": "c2f9d0bd99ce0bc4e2a31c7e7ef8ad9768b7a49d127887e94378b982b9986e10"
+    },
+    "sensor-management": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/sensor-management/SKILL.md",
+      "computedHash": "0d07df92ca6af8d0ab3a1463487926ea3c67b504f157084670e8d6c41d91b12e"
+    },
+    "setup-wizard": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/aws-eks-helm-keycloak/skills/setup-wizard/SKILL.md",
+      "computedHash": "3f5e8d4910c14588537efed258fe10bbf2b4607105698618f45c57eef2b0d261"
+    },
+    "signalr-realtime": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/signalr-realtime/SKILL.md",
+      "computedHash": "6554b96dbb1c8027d1b73bd91f2fb946aa5cd8fcd9714f5a7ca0567f2f748360"
+    },
+    "slots-api": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/slots-api/SKILL.md",
+      "computedHash": "e641f28e194ea65372212f3c9735d03fc1460a355667073409eb7a99f173b42f"
+    },
+    "spring-physics": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/spring-physics/SKILL.md",
+      "computedHash": "9c2844c88ba7b2bfc1a46998e2fe90f0d2c51d83eb608f4d22bd21aad416bce6"
+    },
+    "ssr-nextjs": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/ssr-nextjs/SKILL.md",
+      "computedHash": "414ad81cd598cf22288590721c0e40605cb18603dcec96a9df53be3bda73d72b"
+    },
+    "stacked-prs": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/stacked-prs/SKILL.md",
+      "computedHash": "0d728014c6cc1c34f298ec407965650d0e497f7aea10179ff7e8abdb726e3240"
+    },
+    "streaming": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/streaming/SKILL.md",
+      "computedHash": "388ea4db06f8339559c916757150cfd207c6bd6d26c9994b733e62209c0478ba"
+    },
+    "supply-chain-security": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/supply-chain-security/SKILL.md",
+      "computedHash": "ce67e0c5de920aa8b5799c866397d80ed604c022f20f641e4461a502a05e6f88"
+    },
+    "svg-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/svg-animations/SKILL.md",
+      "computedHash": "5422addc159cc63544404923985c476af84dbfc27520d793e729311407c1b744"
+    },
+    "sx-styled": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/sx-styled/SKILL.md",
+      "computedHash": "d84958c00dffbddf5dabf9fb238e5e77ee94c8fe76f52339d764020e157f7376"
+    },
+    "syncfusion-blazor": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/syncfusion-blazor/SKILL.md",
+      "computedHash": "7a98b8102076fefb2c4eeff79a7b5e012d7bcdefe6f27305f0b61dd9e5d4ab33"
+    },
+    "task-details": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/delivery-orchestrator/skills/task-details/SKILL.md",
+      "computedHash": "6c635a53e9d5a364dac2d124b854448d29212e9fa2cb21875d8ece493b795520"
+    },
+    "terraform": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/terraform/SKILL.md",
+      "computedHash": "a2b0dc40baa37c8d933901d0053307d064f13605f6242bc1d473adf6ffac0ff1"
+    },
+    "testing": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/testing/SKILL.md",
+      "computedHash": "7f6fadc27f6824bdc03c53c938f731e6b6f2c8284a8c616af82d60196fefc487"
+    },
+    "text-animations": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/react-animation-studio/skills/text-animations/SKILL.md",
+      "computedHash": "5a0558ba4799d8e70276278f910896b26267a9442cd74b64602d21b3eb43784d"
+    },
+    "tool-metadata-design": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/tool-metadata-design/SKILL.md",
+      "computedHash": "9da8fbd1a21243bfe700f61edededb28c3045b86c9f5477a7b0b63268c5d90ea"
+    },
+    "tool-use": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/tool-use/SKILL.md",
+      "computedHash": "8a33cb141579e55b8e6b5fede56cbc16ee05d1be36071e08cfdf30a0ff0bdf63"
+    },
+    "tree-view": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/tree-view/SKILL.md",
+      "computedHash": "7bb2c8ee697b7a0bebe6cb5207c124915bfd8e9973b8d5cb2b34bb45663a3a3b"
+    },
+    "ubuntu-deployment": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/home-assistant-architect/skills/ubuntu-deployment/SKILL.md",
+      "computedHash": "c102d5db82eeac4045df4bd15d61eca018bd288863a223a5c52832ed58c21551"
+    },
+    "ui-performance": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/ui-performance/SKILL.md",
+      "computedHash": "486f1275e22b911ef4f485521ec087c8ade50ccdfe5b84936345443d9456b4b6"
+    },
+    "ui-porting-migration": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/ui-porting-migration/SKILL.md",
+      "computedHash": "d95152ee523f869ddea2a24a03ca8a64bbb38d2d9eb725e3c1729ce52776e595"
+    },
+    "ui-security-sandbox": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/ui-security-sandbox/SKILL.md",
+      "computedHash": "9de0977168862eff2fd048e1060787da7e6b8daf0fd41081e660329cabfd8022"
+    },
+    "ui-state-architecture": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/ui-state-architecture/SKILL.md",
+      "computedHash": "e002c93200d566080efd346143bbc79d838fd9e560535dfef17e411b86928373"
+    },
+    "ui-testing-harness": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/ui-testing-harness/SKILL.md",
+      "computedHash": "3e4b6326d3edc2a596ceefbe7661b0a2f9943c766e03bced77804adb24f65e36"
+    },
+    "universal-templating": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/claude-code-templating-plugin/skills/universal-templating/SKILL.md",
+      "computedHash": "7d2852d14607bd022a0cfbd96383b6fcad5c5dd3045d030c5bae369dc93119c3"
+    },
+    "upgrade-analysis": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/upgrade-suggestion/skills/upgrade-analysis/SKILL.md",
+      "computedHash": "8be94ac5d4137845a14110e1761432bc0cea87e4d859f00fe141dc559b53cdac"
+    },
+    "vectordb": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/vector-db/SKILL.md",
+      "computedHash": "9e9ba27c02585e7d0b1feea189616d47dba4e2c58cd6d4c0c7c86e68f6485e5f"
+    },
+    "virtualization": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/virtualization/SKILL.md",
+      "computedHash": "a8a60de7830d259393400dee64fbeb575dfc554b6dbb04c533cf2300fe25cec3"
+    },
+    "vision-multimodal": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/vision-multimodal/SKILL.md",
+      "computedHash": "443b51281d1e17e27dda5b26b9928c84671f2c80b1c40a4d63afb0c2160a7347"
+    },
+    "web-research": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/web-research/SKILL.md",
+      "computedHash": "93c80b58b79f5409348f6fba7f4dee0d5bb68948621392da5c80d3f5699fd99c"
+    },
+    "white-label": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mui-expert/skills/white-label/SKILL.md",
+      "computedHash": "0d2a36e489a303962a78018c676c4dcbae4d3d1401151c294418a1a26396650c"
+    },
+    "widget-ux-patterns": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/mcp-apps-studio/skills/widget-ux-patterns/SKILL.md",
+      "computedHash": "dbb613ecf6d0ba0df9b9fa7722a5b87a71cdaf2f64b37afeca87958a5e8cc0c1"
+    },
+    "work-unit-protocol": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/work-automation/skills/work-unit-protocol/SKILL.md",
+      "computedHash": "2ba61204a3a629655921bd1011834f2b10fde6c377aa915ae679c6db11a01e7e"
+    },
+    "worker-services": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/dotnet-blazor/skills/worker-services/SKILL.md",
+      "computedHash": "2e1df661eeaf3d8567e46ce40f1f05dfb4ae842cf307d39825bbadec7313edad"
+    },
+    "writing-plans-enhanced": {
+      "source": "thelobbi/claude",
+      "sourceType": "github",
+      "skillPath": "plugins/writing-plans-enhanced/skills/writing-plans-enhanced/SKILL.md",
+      "computedHash": "a82bad9df3357f4285caad0b65498af3ae643ca7614289f6b0c1b6356196a8b3"
+    }
+  }
+}

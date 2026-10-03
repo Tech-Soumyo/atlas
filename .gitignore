@@ -2,6 +2,7 @@
 .env
 .env.*
 !.env.example
+!apps/web/.env.example
 apps/web/.env
 apps/web/.env.local
 *.pem
@@ -45,7 +46,8 @@ evals/reports/**
 
 # IDE / OS
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .DS_Store
 *.swp
 
@@ -58,3 +60,10 @@ docker-compose.override.yml
 *.pt
 *.pth
 .cache/
+
+.agents
+docs/**
+CHANGELOG_FILES.md
+CHANGELOG_CONTEXT.md
+.vscode/**
+tests/**

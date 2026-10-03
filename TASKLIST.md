@@ -1,51 +1,61 @@
 # Atlas — High-Level End-to-End Task List
 
 > Master checklist for Phase 1 (RAG + Next.js) and Phase 2 (architecture layer upgrades).  
-> Details: [`PRD.md`](PRD.md) · [`STRUCTURE.md`](STRUCTURE.md) · [`TECH_STACK.md`](TECH_STACK.md) · [`docs/skills_usage_guide.md`](docs/skills_usage_guide.md)
+> Details: `[PRD.md](PRD.md)` · `[STRUCTURE.md](STRUCTURE.md)` · `[TECH_STACK.md](TECH_STACK.md)` · `[docs/skills_usage_guide.md](docs/skills_usage_guide.md)`
 
-| Field | Value |
-|-------|-------|
-| **Status** | Not started (pre-M0) |
-| **Portfolio ready** | End of **Phase 1** when M0–M7 ✅ |
-| **Interview max** | M8 + talk track |
+
+| Field               | Value                                       |
+| ------------------- | ------------------------------------------- |
+| **Status**          | M0 complete · next M1                       |
+| **Portfolio ready** | End of **Phase 1** when M0–M7 ✅             |
+| **Interview max**   | M8 + talk track                             |
 | **Every milestone** | Follow learning loop below before moving on |
 
+
 ---
+
+
 
 ## How to use this list
 
 For **each** milestone slice:
 
-1. Read 3–5 questions — [`../Questions_RAG_120.md`](../Questions_RAG_120.md) + [`docs/code_explain_loop.md`](docs/code_explain_loop.md)  
-2. Pick skills — [`docs/skills_usage_guide.md`](docs/skills_usage_guide.md)  
-3. Implement + test  
-4. Explain out loud (Atlas-based interview card)  
-5. Tick [`../topics.md`](../topics.md)  
-6. Check milestone DoD in PRD §5c  
-7. Only then advance  
+1. Read 3–5 questions — `[../Questions_RAG_120.md](../Questions_RAG_120.md)` + `[docs/code_explain_loop.md](docs/code_explain_loop.md)`
+2. Pick skills — `[docs/skills_usage_guide.md](docs/skills_usage_guide.md)`
+3. Implement + test
+4. Explain out loud (Atlas-based interview card)
+5. Tick `[../topics.md](../topics.md)`
+6. Check milestone DoD in PRD §5c
+7. Only then advance
 
-**Rule:** Atlas docs win over generic skill defaults. Keep RAG logic in `packages/*`.
+**Rule:** Atlas docs win over generic skill defaults. Keep RAG logic in `packages/`*.
 
 ---
+
+
 
 ## Progress overview
 
-| Phase | Block | Status |
-|-------|-------|--------|
-| 0 | Prep & scaffold | ☐ |
-| 1 | M0 Foundations | ☐ |
-| 1 | M1 Naive RAG | ☐ |
-| 1 | M2 Ingestion & chunking | ☐ |
-| 1 | M3 Indexes | ☐ |
-| 1 | M4 Hybrid + rerank | ☐ |
-| 1 | M5 Context & generation | ☐ |
-| 1 | M6 Evaluation | ☐ |
-| 1 | M7 Security & production | ☐ |
-| 1 | M8 Advanced + interview | ☐ |
-| 1 | Phase 1 exit gate | ☐ |
-| 2 | Layer upgrades (L6→…→L7) | ☐ |
+
+| Phase | Block                    | Status |
+| ----- | ------------------------ | ------ |
+| 0     | Prep & scaffold          | ✅      |
+| 1     | M0 Foundations           | ✅      |
+| 1     | M1 Naive RAG             | ☐      |
+| 1     | M2 Ingestion & chunking  | ☐      |
+| 1     | M3 Indexes               | ☐      |
+| 1     | M4 Hybrid + rerank       | ☐      |
+| 1     | M5 Context & generation  | ☐      |
+| 1     | M6 Evaluation            | ☐      |
+| 1     | M7 Security & production | ☐      |
+| 1     | M8 Advanced + interview  | ☐      |
+| 1     | Phase 1 exit gate        | ☐      |
+| 2     | Layer upgrades (L6→…→L7) | ☐      |
+
 
 ---
+
+
 
 ## Phase 0 — Prep (before coding)
 
@@ -58,32 +68,42 @@ For **each** milestone slice:
 
 ---
 
+
+
 ## Phase 1 — RAG product (M0–M8)
 
+
+
 ### M0 — Foundations
+
 **Topics:** 101–102, 110 · **Skills:** `fastapi`, `fastapi-templates`, `multi-stage-dockerfile`, `tdd`
 
-- [ ] Root `pyproject.toml` + package path installs (`atlas_*`)  
-- [ ] `packages/common` config (env + YAML)  
-- [ ] Docker Compose: postgres, qdrant, redis, api, worker, web  
-- [ ] `deploy/docker/*` multi-stage Dockerfiles  
-- [ ] FastAPI `/health` + `/ready`  
-- [ ] Worker process starts and heartbeats / idle OK  
-- [ ] Next.js shell loads; can call API health  
-- [ ] `.env` wired; secrets not committed  
-- [ ] README runbook: `make up` / compose up, test smoke  
-- [ ] pytest smoke for health  
-- [ ] **DoD:** Compose healthy; packages importable; web→API health  
-- [ ] **Explain:** Q101–Q102, Q110  
+- [x] Root `pyproject.toml` + package path installs (`atlas_*`)  
+- [x] `packages/common` config (env + YAML)  
+- [x] Docker Compose: postgres, qdrant, redis, api, worker, web  
+- [x] `deploy/docker/*` multi-stage Dockerfiles  
+- [x] FastAPI `/health` + `/ready`  
+- [x] Worker process starts and heartbeats / idle OK  
+- [x] Next.js shell loads; can call API health  
+- [x] `.env` wired; secrets not committed  
+- [x] README runbook: `make up` / compose up, test smoke  
+- [x] pytest smoke for health  
+- [x] **DoD:** Compose healthy; packages importable; web→API health  
+- [x] **Explain:** Q101–Q102, Q110  
+
+> M0 complete: Compose DoD verified; interview cards in `[docs/interview_cards.md](docs/interview_cards.md)`.
 
 ---
 
+
+
 ### M1 — Naive RAG
+
 **Topics:** 1–10 · **Skills:** `rag-implementation`, `langgraph-fundamentals`, `fastapi`
 
 - [ ] Minimal ingest: one PDF → chunks → embed → store  
 - [ ] Naive retrieve top-K → LLM answer (Groq/Gemini adapter)  
-- [ ] LangGraph linear ask graph (v0)  
+- [ ] LangGraph linear ask graph (v0)  1
 - [ ] API `POST /v1/documents` + `POST /v1/ask` (sync)  
 - [ ] Next.js: upload + ask happy path  
 - [ ] Document naive vs advanced limitations in ADR/note  
@@ -92,7 +112,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M2 — Ingestion & chunking
+
 **Topics:** 11–20, 108 · **Skills:** `fastapi`, `async-python-patterns`, `tdd`
 
 - [ ] Async ingest job queue (Redis local)  
@@ -107,7 +130,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M3 — Indexes (dense + sparse)
+
 **Topics:** 21–30, 105, 107 · **Skills:** `qdrant-clients-sdk`, `rag-implementation`
 
 - [ ] Qdrant collection + payload (tenant, ACL, version)  
@@ -120,7 +146,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M4 — Hybrid retrieval + rerank
+
 **Topics:** 31–50, 106 · **Skills:** `rag-implementation`, `langgraph-fundamentals`, `async-python-patterns`
 
 - [ ] Parallel dense + sparse retrieve  
@@ -135,7 +164,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M5 — Context engineering & generation
+
 **Topics:** 51–60 · **Skills:** `rag-implementation`, `langgraph-fundamentals`
 
 - [ ] Context budgeter (tiktoken)  
@@ -150,7 +182,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M6 — Evaluation & CI
+
 **Topics:** 71–80, 109 · **Skills:** `llm-evaluation`, `python-testing-patterns`, `tdd`
 
 - [ ] Golden set + qrels (40–80 Qs, 3 tenants)  
@@ -164,7 +199,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M7 — Security & production engineering
+
 **Topics:** 81–100 · **Skills:** `async-python-patterns`, `python-testing-patterns`, `multi-stage-dockerfile`
 
 - [ ] Multi-tenant + doc ACL on **both** dense and sparse paths  
@@ -181,7 +219,10 @@ For **each** milestone slice:
 
 ---
 
+
+
 ### M8 — Advanced spikes + interview polish
+
 **Topics:** 61–70 (selective), 103–104, 111–120 · **Skills:** `langgraph-persistence`, `langgraph-fundamentals`, `rag-implementation`
 
 - [ ] Agentic / multi-hop RAG spike (LangGraph) **or** one other advanced pattern  
@@ -195,6 +236,8 @@ For **each** milestone slice:
 
 ---
 
+
+
 ## Phase 1 exit gate (portfolio / interview ready)
 
 - [ ] M0–M7 DoD all met  
@@ -207,33 +250,50 @@ For **each** milestone slice:
 
 ---
 
+
+
 ## Phase 2 — Architecture layer upgrades (same repo)
 
 Order (from PRD): **L6 → L2 → L5 → L8 → L11 → L9 → L10 → L12 → L1 → L7**
 
 ### W1
+
 - [ ] **L6 LLM Gateway** — routing, failover, multi-cache, multi-provider  
 - [ ] **L2 Orchestration** — planner, tools, memory, HITL checkpoints  
 
+
+
 ### W2
+
 - [ ] **L5 Guardrails** — fuller in/out rails, PII, policy engine  
 - [ ] **L8 Obs/Evals** — online evals, feedback→eval loop  
 
+
+
 ### W3
+
 - [ ] **L11 DevOps** — progressive delivery, scans, stronger CI  
 - [ ] **L9 Security** — zero-trust hardening, retention/compliance  
 - [ ] **L10 Infra** — K8s-lite / cloud deploy story  
 
+
+
 ### W4
+
 - [ ] **L12 HITL** — review queue / lightweight improvement loop  
 - [ ] **L1 Channels** — Slack/Teams or richer admin  
 - [ ] **L7 Model** — selection matrix; optional FT vs RAG demo note  
 
+
+
 ### Optional anytime in Phase 2
+
 - [ ] Upstash mode adapters (`docs/upstash_integration.md`) if not done in Phase 1  
 - [ ] ADR per layer upgrade under `docs/adr/phase2_L{n}_*.md`  
 
 ---
+
+
 
 ## Cross-cutting tasks (track continuously)
 
@@ -246,36 +306,33 @@ Order (from PRD): **L6 → L2 → L5 → L8 → L11 → L9 → L10 → L12 → L
 
 ---
 
+
+
 ## Suggested calendar (flexible)
 
-| Week | Focus |
-|------|-------|
-| 1 | Phase 0 + M0–M3 |
-| 2 | M4–M5 |
-| 3 | M6–M7 |
-| 4 | M8 + Phase 1 exit + interview rehearsal |
-| Later | Phase 2 waves |
+
+| Week  | Focus                                   |
+| ----- | --------------------------------------- |
+| 1     | Phase 0 + M0–M3                         |
+| 2     | M4–M5                                   |
+| 3     | M6–M7                                   |
+| 4     | M8 + Phase 1 exit + interview rehearsal |
+| Later | Phase 2 waves                           |
+
 
 ---
+
+
 
 ## Definition of “project complete”
 
-| Level | Criteria |
-|-------|----------|
-| **Showcase complete** | Phase 1 exit gate ✅ + working Next.js demo |
-| **Interview complete** | Showcase + talk track + Q111–Q120 cold |
+
+| Level                     | Criteria                                               |
+| ------------------------- | ------------------------------------------------------ |
+| **Showcase complete**     | Phase 1 exit gate ✅ + working Next.js demo             |
+| **Interview complete**    | Showcase + talk track + Q111–Q120 cold                 |
 | **Architecture complete** | Phase 2 waves done (or consciously deferred with ADRs) |
+
 
 ---
 
-## Related docs
-
-| Doc | Role |
-|-----|------|
-| [`PRD.md`](PRD.md) | Requirements & DoD |
-| [`TASKLIST.md`](TASKLIST.md) | This file — execution checklist |
-| [`../topics.md`](../topics.md) | Learning coverage |
-| [`../Questions_RAG_120.md`](../Questions_RAG_120.md) | Interview questions |
-| [`docs/skills_usage_guide.md`](docs/skills_usage_guide.md) | Which skill when |
-| [`docs/zero_cost_showcase.md`](docs/zero_cost_showcase.md) | ₹0 / Groq-Gemini path |
-| [`docs/upstash_integration.md`](docs/upstash_integration.md) | Optional serverless data plane |

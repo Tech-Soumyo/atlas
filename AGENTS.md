@@ -10,32 +10,50 @@
 
 ## Build approach
 
-<TBD, set by /scope>
+Skateboard (ship the smallest usable product, then grow it).
 
 ## Commands
 
 ```bash
-# Install (wired by /develop tooling)
-# uv sync   # or pip install -e …
-cd apps/web && npm install
+make install          # uv sync workspace + dev tools
+make install-web      # npm install in apps/web
+make up               # docker compose up --build (api, worker, web, postgres, qdrant, redis)
+make down
+make test-unit        # pytest tests/unit (health + config smoke)
+make test
+make lint
+make typecheck
+make format            # Ruff format + Prettier
+make pre-commit-install
+make ci               # lint + types + tests + web lint/tsc
 
-# Dev
-docker compose up --build
+# Local API without Compose (host deps must be up for /ready)
+# When .env is cloud oriented, override ATLAS_DATA_PLANE=local plus DATABASE_URL/REDIS_URL/QDRANT_URL
+uv run uvicorn atlas_api.main:app --host 0.0.0.0 --port 8000
+uv run atlas-worker
 cd apps/web && npm run dev
-
-# Test / lint (Makefile targets via /develop tooling)
-pytest
-ruff check . && ruff format --check . && mypy .
-cd apps/web && npm run lint
+cd apps/web && npm run test:e2e
 ```
 
-## Specs
+## Specs & docs workflow
 
-Stored in `docs/specs/`. Format: `docs/specs/NNNN-title.md`.
+Artifact base: `docs/` (see [`docs/README.md`](docs/README.md)).
+
+| Path | Role |
+|------|------|
+| `docs/scope/` | Living feature plan (`/scope` → `scope.md`) |
+| `docs/specs/` | Build specs (`/architect` → `NNNN-title.md` or `NNNN-title/`) |
+| `docs/adr/` | Short ADRs for non-obvious trade-offs |
+| `docs/releases/` | Release notes (`/document release-note`) |
+| `docs/postmortems/` | Incident writeups (`/document postmortem`) |
+
+Suggested loop: `/scope` → `/audit` → `/architect` → `/develop` → `/check verify` → `/test` → `/check review` → `/document` → `/sync`.
+
+Current pass: M1 Naive RAG (see `docs/scope/_root/scope.md`). Workflow default there is GA.
 
 ## Tooling
 
-For `/develop tooling`: Ruff + mypy strict; ESLint + Prettier (ESLint already in `apps/web`); pre-commit lint/format/typecheck; pytest + later Playwright smoke; CI lint/typecheck/test on push.
+For `/develop tooling`: Ruff + mypy strict; ESLint + Prettier (ESLint already in `apps/web`); pre-commit lint/format/typecheck; pytest (`tests/unit`, `tests/integration`); Playwright shell smoke in `apps/web` (`npm run test:e2e`); CI lint/typecheck/test on push.
 
 ## Git
 
@@ -49,6 +67,10 @@ For `/develop tooling`: Ruff + mypy strict; ESLint + Prettier (ESLint already in
 - Use cases behind package `service.py` façades. Cross boundary via Pydantic DTOs/plain objects. Unit test pure packages; integration test infrastructure.
 - Strict types (mypy/TS `strict`, no `any`). Match scaffold folders. Document public APIs; consistent errors; validate env at startup.
 - Naming: `atlas_*` under `src/`; snake_case Python; camelCase TS. Conventional commits.
+- Config: read env and YAML only through `atlas_common.config` (`Settings`, `load_yaml_configs`); do not scatter `os.environ` in domain packages.
+- API health: `/health` is liveness; `/ready` probes postgres, redis, and qdrant (skipped when `ATLAS_ENV=test`).
+- Compose: force `ATLAS_DATA_PLANE=local` and service DNS URLs in `docker-compose.yml` so a host cloud `.env` does not break the local data plane.
+- Web → API: browser uses `NEXT_PUBLIC_ATLAS_API_URL`; server side (Compose) prefers `ATLAS_API_INTERNAL_URL` via `apps/web/lib/atlas_api.ts`.
 - Atlas docs win over skill layouts; Context7 wins over stale snippets. Skill pick order: [`docs/skills_usage_guide.md`](docs/skills_usage_guide.md).
 
 ## Agent skills
@@ -67,9 +89,13 @@ For `/develop tooling`: Ruff + mypy strict; ESLint + Prettier (ESLint already in
 - [multi-stage-dockerfile](~/.agents/skills/multi-stage-dockerfile/): `github/awesome-copilot`, image hardening
 
 MCP servers: context7 (connected)
+Declined: arq, Playwright, PyMuPDF / sentence-transformers skill discovery (M1 sync; engineer chose skip)
 
 ## Context files
 
-- [apps/web/AGENTS.md](apps/web/AGENTS.md): Next.js generated web UI agent rules
+- [apps/web/AGENTS.md](apps/web/AGENTS.md): Next.js generated web UI agent rules (M1 has no upload/ask UI)
+- [apps/api/AGENTS.md](apps/api/AGENTS.md): FastAPI HTTP edge (health, documents, jobs, ask)
+- [apps/worker/AGENTS.md](apps/worker/AGENTS.md): arq ingest worker + stale job reconcile
+- [packages/common/AGENTS.md](packages/common/AGENTS.md): Shared Settings, YAML, logging, types
 
 _Drafted by /audit from the repo, worth a quick human pass. Edit freely: once a line stops matching this draft, later runs treat it as curated and will flag rather than overwrite it._

@@ -1,3 +1,9 @@
-"""Atlas package."""
+"""Security helpers for Atlas."""
 
-__version__ = "0.1.0"
+from atlas_security.api_key import (
+    ApiKeyError,
+    require_api_key_configured,
+    verify_api_key,
+)
+
+__all__ = ["ApiKeyError", "require_api_key_configured", "verify_api_key"]

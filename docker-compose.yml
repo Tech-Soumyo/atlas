@@ -1,0 +1,124 @@
+name: atlas
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: atlas
+      POSTGRES_PASSWORD: atlas
+      POSTGRES_DB: atlas
+    ports:
+      - "5432:5432"
+    volumes:
+      - atlas_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U atlas -d atlas"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:v1.13.2
+    ports:
+      - "6333:6333"
+    volumes:
+      - atlas_qdrant_data:/qdrant/storage
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333'",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+      start_period: 10s
+
+  api:
+    build:
+      context: .
+      dockerfile: deploy/docker/api.Dockerfile
+    env_file:
+      - .env
+    environment:
+      ATLAS_ENV: development
+      ATLAS_DATA_PLANE: local
+      ATLAS_CONFIGS_DIR: /app/configs
+      DATABASE_URL: postgresql+psycopg://atlas:atlas@postgres:5432/atlas
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: atlas
+      POSTGRES_PASSWORD: atlas
+      POSTGRES_DB: atlas
+      REDIS_URL: redis://redis:6379/0
+      QDRANT_URL: http://qdrant:6333
+      OBJECT_STORE_PATH: /app/data/raw
+      OTEL_SERVICE_NAME: atlas-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - atlas_object_store:/app/data/raw
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: .
+      dockerfile: deploy/docker/worker.Dockerfile
+    env_file:
+      - .env
+    environment:
+      ATLAS_ENV: development
+      ATLAS_DATA_PLANE: local
+      ATLAS_CONFIGS_DIR: /app/configs
+      DATABASE_URL: postgresql+psycopg://atlas:atlas@postgres:5432/atlas
+      POSTGRES_HOST: postgres
+      REDIS_URL: redis://redis:6379/0
+      QDRANT_URL: http://qdrant:6333
+      OBJECT_STORE_PATH: /app/data/raw
+      WORKER_HEARTBEAT_SECONDS: 10
+      OTEL_SERVICE_NAME: atlas-worker
+    volumes:
+      - atlas_object_store:/app/data/raw
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/docker/web.Dockerfile
+      args:
+        NEXT_PUBLIC_ATLAS_API_URL: http://localhost:8000
+    environment:
+      NEXT_PUBLIC_ATLAS_API_URL: http://localhost:8000
+      ATLAS_API_INTERNAL_URL: http://api:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  atlas_pg_data:
+  atlas_qdrant_data:
+  atlas_object_store:

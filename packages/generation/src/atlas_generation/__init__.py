@@ -1,3 +1,5 @@
-"""Atlas package."""
+"""Generation façades."""
 
-__version__ = "0.1.0"
+from atlas_generation.service import GenerationResult, generate_answer
+
+__all__ = ["GenerationResult", "generate_answer"]
